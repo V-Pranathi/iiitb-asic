@@ -3,8 +3,9 @@
     <summary>
      Yosys     
     </summary>
+I installed Yosys using the following commands:    
+
 '''
-I installed Yosys using the following commands:  
 $ git clone https://github.com/YosysHQ/yosys.git  
 $ cd yosys-master   
 $ sudo apt install make (If make is not installed please install it)   
