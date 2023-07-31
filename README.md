@@ -1,7 +1,7 @@
 # Day 0
 Yosys  
 I installed Yosys using the following commands:  
-$ git clone https://github.com/YosysHQ/yosys.git  
+'''$ git clone https://github.com/YosysHQ/yosys.git  
 $ cd yosys-master   
 $ sudo apt install make (If make is not installed please install it)   
 $ sudo apt-get install build-essential clang bison flex \
@@ -10,7 +10,7 @@ $ sudo apt-get install build-essential clang bison flex \
     libboost-python-dev libboost-filesystem-dev zlib1g-dev
 $ make config-gcc  
 $ make   
-$ sudo make install  
+$ sudo make install ''' 
 
 Below is the screenshot showing successfull launch
 
