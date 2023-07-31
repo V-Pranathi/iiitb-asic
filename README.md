@@ -15,3 +15,11 @@ $ sudo make install
 Below is the screenshot showing successfull launch
 
 ![Screenshot from 2023-07-31 09-49-23](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/59e01e06-8888-4941-b74e-a5bfce71934e)
+
+Iverilog 
+I installed iverilog using the following command:
+sudo apt-get install iverilog
+Below is the screenshot showing successful launch:
+
+![Screenshot from 2023-07-31 09-50-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/968ce75b-ab04-4fd6-950e-f855497277a9)
+
