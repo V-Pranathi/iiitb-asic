@@ -83,7 +83,7 @@ Below is the screenshot showing successful launch
     <summary>
         ngspice
     </summary>
-    After downloading the tarball from <https://sourceforge.net/projects/ngspice/files/> to a local directory, unpack it using:  
+    After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:  
 
     # ngspice installation:
     tar -zxvf ngspice-40.tar.gz
