@@ -16,7 +16,7 @@
      Yosys     
     </summary>
 
-#### Steps to Install Yosys ####
+#### Steps to install Yosys ####
 
 ```
 $ git clone https://github.com/YosysHQ/yosys.git  
