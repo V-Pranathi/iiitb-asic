@@ -1,8 +1,9 @@
 # Physical Design Of ASICs #
 ## Table of Contents ##
-* Day1
+* [Day1](#Day1)
 <details>
     <summary>
+        ## Day1 ##
      Yosys     
     </summary>
 I installed Yosys using the following commands:    
