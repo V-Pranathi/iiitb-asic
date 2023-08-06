@@ -96,3 +96,24 @@ Below is the screenshot showing successful launch
 ![Screenshot from 2023-08-06 12-17-12](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5f3dca7a-eca9-49fb-b347-e4e81123e227)
 
 </details>
+<details>
+    <summary>
+        magic
+    </summary>
+    Steps to install magic
+
+    $   sudo apt-get install m4
+    $   sudo apt-get install tcsh
+    $   sudo apt-get install csh
+    $   sudo apt-get install libx11-dev
+    $   sudo apt-get install tcl-dev tk-dev
+    $   sudo apt-get install libcairo2-dev
+    $   sudo apt-get install mesa-common-dev libglu1-mesa-dev
+    $   sudo apt-get install libncurses-dev
+    git clone https://github.com/RTimothyEdwards/magic
+    cd magic
+    ./configure
+    make
+    sudo make install
+</de![Screenshot from 2023-08-06 12-27-39](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c88600ba-1dc0-4347-a2b1-48e3d673a6a5)
+tails>
