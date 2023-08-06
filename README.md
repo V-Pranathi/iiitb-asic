@@ -4,7 +4,6 @@
 ## Day1 ##
 <details>
     <summary>
-       
      Yosys     
     </summary>
 I installed Yosys using the following commands:    
