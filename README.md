@@ -64,6 +64,7 @@ Below is the screenshot showing successful launch
        OpenSTA
    </summary> 
     Installing OpenSTA using the following commands:  
+    
     ```
     
     # Dependencies for OpenSTA
