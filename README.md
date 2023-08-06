@@ -92,5 +92,7 @@ Below is the screenshot showing successful launch
     cd release
     ../configure  --with-x --with-readline=yes --disable-debug
     make
-    sudo make install
+    sudo make install  
+![Screenshot from 2023-08-06 12-17-12](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5f3dca7a-eca9-49fb-b347-e4e81123e227)
+
 </details>
