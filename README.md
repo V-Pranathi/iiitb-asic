@@ -59,4 +59,23 @@ Below is the screenshot showing successful launch
 ![Screenshot from 2023-07-31 09-54-34](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/a87a7a8c-f501-4b35-be79-7526b6daf53f)
 ![Screenshot from 2023-07-31 09-54-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/89be5ae7-f754-4e20-8623-c5e5a810f271)
 </details>
+<details>
+   <summary>
+       OpenSTA
+   </summary> 
+    Installing OpenSTA using the following commands:  
+    ```
+    
+    # Dependencies for OpenSTA
+    sudo apt-get install cmake clang gcc tcl swig bison flex 
 
+    # Commands to Install OpenSTA
+    git clone https://github.com/The-OpenROAD-Project/OpenSTA.git
+    cd OpenSTA
+    mkdir build
+    cd build
+    cmake ..
+    make
+    sudo make install  
+    ```
+</details>
