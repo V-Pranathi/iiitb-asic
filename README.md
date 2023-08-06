@@ -8,6 +8,7 @@
      * ngspice
      * magic
      * OpenLane
+* [References](#References)
 ## Day1 ##
 <details>
     <summary>
@@ -162,5 +163,6 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
     cd OpenLane
     make
     make test
-
 </details>
+
+## References ##
