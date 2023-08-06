@@ -144,7 +144,7 @@ Below is the screenshot showing successful launch
     sudo docker run hello-world
 ![Screenshot from 2023-08-06 12-54-13](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/0f1dd611-1b0c-4f9e-8920-3eba8a9ca58e)
 
-### Check Dependencies ###
+#### Check Dependencies ####
 
     git --version
     docker --version
@@ -155,7 +155,7 @@ Below is the screenshot showing successful launch
 ![Screenshot from 2023-08-06 12-57-47](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/35b24fcc-68b2-41e7-ad90-123d8e0e89af)
 ![Screenshot from 2023-08-06 12-58-17](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f9dce05e-884e-48b0-81ad-0acaca831b3a)
 
-### Steps to Install PDKs and tools ###  
+#### Steps to Install PDKs and tools ####  
 
     cd $HOME
     git clone https://github.com/The-OpenROAD-Project/OpenLane
