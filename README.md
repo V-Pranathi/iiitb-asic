@@ -75,4 +75,6 @@ Below is the screenshot showing successful launch
     cmake ..
     make
     sudo make install  
+![Screenshot from 2023-08-06 11-54-21](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/d2b030d7-c192-4d94-a82d-9b30872c91d7)
+
 </details>
