@@ -4,6 +4,10 @@
      * Yosys
      * iverilog
      * gtkwave
+     * OpenSTA
+     * ngspice
+     * magic
+     * OpenLane
 ## Day1 ##
 <details>
     <summary>
