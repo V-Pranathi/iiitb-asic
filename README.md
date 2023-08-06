@@ -115,5 +115,35 @@ Below is the screenshot showing successful launch
     ./configure
     make
     sudo make install
-</de![Screenshot from 2023-08-06 12-27-39](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c88600ba-1dc0-4347-a2b1-48e3d673a6a5)
-tails>
+![Screenshot from 2023-08-06 12-27-39](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c88600ba-1dc0-4347-a2b1-48e3d673a6a5)
+</details>
+<details>
+    <summary>
+        OpenLane
+    </summary>
+    Steps to install OpenLane:
+
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt install -y build-essential python3 python3-venv python3-pip make git
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee     /etc/apt/sources.list.d/docker.list > /dev/null
+
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io
+    sudo docker run hello-world
+
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo reboot 
+
+
+    # After reboot
+    sudo docker run hello-world
+![Screenshot from 2023-08-06 12-54-13](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/0f1dd611-1b0c-4f9e-8920-3eba8a9ca58e)
+
+
+
+</details>
