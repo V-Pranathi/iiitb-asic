@@ -13,7 +13,8 @@
     <summary>
      Yosys     
     </summary>
-I installed Yosys using the following commands:    
+
+#### Steps to Install Yosys ####
 
 ```
 $ git clone https://github.com/YosysHQ/yosys.git  
@@ -27,9 +28,6 @@ $ make config-gcc
 $ make   
 $ sudo make install
 ```
-
-Below is the screenshot showing successfull launch  
-
 ![Screenshot from 2023-07-31 09-49-23](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/59e01e06-8888-4941-b74e-a5bfce71934e)
 </details>
 <details>
@@ -37,25 +35,22 @@ Below is the screenshot showing successfull launch
     iverilog 
     </summary>
 
-I installed iverilog using the following command:
+#### Steps to install iverilog ####
 ```
 sudo apt-get install iverilog
 ```
-Below is the screenshot showing successful launch:
-
 ![Screenshot from 2023-07-31 09-50-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/968ce75b-ab04-4fd6-950e-f855497277a9)
 </details>
 <details>
 <summary>
     gtkwave
 </summary>
-I installed gtkwave using the following command:
+
+#### Steps to install gtkwave ####
 
 ```
 sudo apt-get install gtkwave
 ```
-
-Below is the screenshot showing successful launch
 ![Screenshot from 2023-07-31 09-54-34](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/a87a7a8c-f501-4b35-be79-7526b6daf53f)
 ![Screenshot from 2023-07-31 09-54-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/89be5ae7-f754-4e20-8623-c5e5a810f271)
 </details>
@@ -63,7 +58,8 @@ Below is the screenshot showing successful launch
    <summary>
        OpenSTA
    </summary> 
-    Installing OpenSTA using the following commands: 
+    
+#### Steps to install OpenSTA  ####
     
     # Dependencies for OpenSTA
     sudo apt-get install cmake clang gcc tcl swig bison flex 
@@ -83,7 +79,9 @@ Below is the screenshot showing successful launch
     <summary>
         ngspice
     </summary>
-    After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:  
+
+#### Steps to install ngspice ####
+After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:  
 
     # ngspice installation:
     tar -zxvf ngspice-40.tar.gz
@@ -100,7 +98,8 @@ Below is the screenshot showing successful launch
     <summary>
         magic
     </summary>
-    Steps to install magic
+    
+#### Steps to install magic ####
 
     $   sudo apt-get install m4
     $   sudo apt-get install tcsh
@@ -121,7 +120,8 @@ Below is the screenshot showing successful launch
     <summary>
         OpenLane
     </summary>
-    Steps to install OpenLane:
+   
+#### Steps to install OpenLane ####
 
     sudo apt-get update
     sudo apt-get upgrade
