@@ -77,5 +77,4 @@ Below is the screenshot showing successful launch
     make
     sudo make install  
     ```
-
 </details>
