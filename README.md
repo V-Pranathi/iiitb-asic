@@ -64,11 +64,9 @@ Below is the screenshot showing successful launch
        OpenSTA
    </summary> 
     Installing OpenSTA using the following commands:  
-    
-    
+    ```
     # Dependencies for OpenSTA
     sudo apt-get install cmake clang gcc tcl swig bison flex 
-
     # Commands to Install OpenSTA
     git clone https://github.com/The-OpenROAD-Project/OpenSTA.git
     cd OpenSTA
@@ -77,5 +75,6 @@ Below is the screenshot showing successful launch
     cmake ..
     make
     sudo make install  
+    ```
 
 </details>
