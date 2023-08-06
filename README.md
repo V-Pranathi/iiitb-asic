@@ -79,3 +79,18 @@ Below is the screenshot showing successful launch
 ![Screenshot from 2023-08-06 11-54-21](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/d2b030d7-c192-4d94-a82d-9b30872c91d7)
 
 </details>
+<details>
+    <summary>
+        ngspice
+    </summary>
+    After downloading the tarball from <https://sourceforge.net/projects/ngspice/files/> to a local directory, unpack it using:  
+
+    # ngspice installation:
+    tar -zxvf ngspice-40.tar.gz
+    cd ngspice-40
+    mkdir release
+    cd release
+    ../configure  --with-x --with-readline=yes --disable-debug
+    make
+    sudo make install
+</details>
