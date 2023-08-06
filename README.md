@@ -1,6 +1,6 @@
 # Physical Design Of ASICs #
 ## Table of Contents ##
-* [Day-1 Tools Installation](#day-1-tools-installation "Goto day-1-tools-installation")
+* [Day-1 :Tools Installation](#day-1-:-tools-installation "Goto day-1-:-tools-installation")
      * Yosys
      * iverilog
      * gtkwave
@@ -10,7 +10,7 @@
      * OpenLane
 * [References](#References)
   
-## Day-1 Tools Installation ##
+## Day-1 :Tools Installation ##
 <details>
     <summary>
      Yosys     
