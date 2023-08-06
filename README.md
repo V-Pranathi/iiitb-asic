@@ -1,9 +1,9 @@
 # Physical Design Of ASICs #
 ## Table of Contents ##
 * 1.[Day1](#1.Day1)
-    *[Yosys](#Yosys)
-    *[iverilog](#iverilog)
-    *[gtkwave](#gtkwave)
+  *[Yosys](#Yosys)
+  *[iverilog](#iverilog)
+  *[gtkwave](#gtkwave)
 ## 1.Day1 ##
 <details>
     <summary>
