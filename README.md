@@ -191,7 +191,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 **Simulator:**  It is a tool used to check if it adheres to the designed specifications by simualating the code. It looks for changes on input signals to evaluate outputs. There will be no change in output if there is no change in input signals.
 
 ## 3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave ##
-![Screenshot from 2023-08-08 20-00-52](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f4fe780b-774a-4d58-9619-b4538420ec16)
+![Screenshot from 2023-08-08 20-02-40](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/550de8bd-55d2-4da1-910d-03020ebe5930)
 
 ### 3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab ###
 ## References ##
