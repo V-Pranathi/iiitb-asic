@@ -9,7 +9,7 @@
      * [ngspice](#ngspice)
      * [magic](#magic)
      * [OpenLane](#openlane)
-* 3.[Day-1- Introduction to Verilog RTL design and Synthesis](#day-1--introduction-to-verilog-rtl-design-and-synthesis)
+* [3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
     * [3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog](#3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog)
         * [3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench](#3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench)
     * 3.2 [SKY130RTL D1SK2 - Labs using iverilog and gtkwave](#3-2-sky130rtl-d1sk2---labs-using-iverilog-and-gtkwave)
@@ -31,7 +31,6 @@ This report is submission of the workshop from VSD-IAT on RTL designing and synt
     </summary>
 
 #### Steps to install Yosys ####
-
 ```
 $ git clone https://github.com/YosysHQ/yosys.git  
 $ cd yosys-master   
@@ -180,7 +179,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
     make test
 </details>
 
-## <a name="day-1--introduction-to-verilog-rtl-design-and-synthesis"> </a> 3.Day-1- Introduction to Verilog RTL design and Synthesis ##
+## <a name="3-day-1--introduction-to-verilog-rtl-design-and-synthesis"> </a> 3.Day-1- Introduction to Verilog RTL design and Synthesis ##
 ### <a name="3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog"> </a> 3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog ###
 #### <a name="3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench"> <a/> 3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench ####
 **RTL Design:** It is basically the implementation of specifications. RTL design lies between high-level behavioral design and low-level gate-level design. It captures the functionality of the circuit at a level where data transfers between registers are the main focus, while ignoring the specific implementation details of gates and transistors. In general,the RTL designs are described using HDLs like Verilog or VHDL.
