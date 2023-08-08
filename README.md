@@ -24,7 +24,7 @@
 * [Acknowledgement](#Acknowledgement)
 ## <a name="1-introduction"></a> 1.Introduction ##  
 This report is submission of the workshop from VSD-IAT on RTL designing and synthesis using open source tools. The tools used are iVerilog, GTKWave, Yosy and Skywater 130nm Standard Cell Libraries. 
-## 2.Tools Installation ##
+## <a name="2-tools-installation"></a> 2.Tools Installation ##
 <details> 
     <summary>
      Yosys     
