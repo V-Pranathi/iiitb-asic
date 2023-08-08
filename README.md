@@ -20,8 +20,8 @@
         * [3.3.2 SKY130RTL D1SK3 L2 Introduction to logic synthesis](#3-3-2-sky130rtl-d1sk3-l2-introduction-to-logic-synthesis) 
     * [3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs](#3-4-sky130rtl-d1sk4---labs-using-yosys-and-sky130-pdks)
         * [3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux](#3-4-1-sky130rtl-d1sk4-l1-lab3-yosys-1-good-mux)
-* [Contributors](#Contributors)
-* [Acknowledgement](#Acknowledgement)
+* [Contributors](#contributors)
+* [Acknowledgement](#acknowledgement)
 ## <a name="1-introduction"></a> 1.Introduction ##  
 This report is submission of the workshop from VSD-IAT on RTL designing and synthesis using open source tools. The tools used are iVerilog, GTKWave, Yosy and Skywater 130nm Standard Cell Libraries. 
 ## <a name="2-tools-installation"></a> 2.Tools Installation ##
