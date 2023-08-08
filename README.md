@@ -183,5 +183,15 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 
 ## 3.Day-1- Introduction to Verilog RTL design and Synthesis ##
 ### 3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog ###
-_RTL Design:_ It is basically the implementation of specifications. RTL design lies between high-level behavioral design and low-level gate-level design. It captures the functionality of the circuit at a level where data transfers between registers are the main focus, while ignoring the specific implementation details of gates and transistors. In general,the RTL designs are described using HDLs like Verilog or VHDL.
+**RTL Design:** It is basically the implementation of specifications. RTL design lies between high-level behavioral design and low-level gate-level design. It captures the functionality of the circuit at a level where data transfers between registers are the main focus, while ignoring the specific implementation details of gates and transistors. In general,the RTL designs are described using HDLs like Verilog or VHDL.
+**Test Bench:** Test bench gives stimulus to the design which is under test and verify the functionality of the design we described in verilog. Test bench is written seperately by instantiating the design which need to be simulated. 
+
+![Screenshot from 2023-08-08 19-51-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/1e187333-b095-4772-bc5a-b96f3227d82f)
+
+**Simulator:**  It is a tool used to check if it adheres to the designed specifications by simualating the code. It looks for changes on input signals to evaluate outputs. There will be no change in output if there is no change in input signals.
+
+## 3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave ##
+![Screenshot from 2023-08-08 20-00-52](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f4fe780b-774a-4d58-9619-b4538420ec16)
+
+### 3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab ###
 ## References ##
