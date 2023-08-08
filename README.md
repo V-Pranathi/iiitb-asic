@@ -27,7 +27,7 @@ This report is submission of the workshop from VSD-IAT on RTL designing and synt
 ## <a name="2-tools-installation"></a> 2.Tools Installation ##
 <details> 
     <summary>
-     Yosys     
+     <a name="yosys"> </a> Yosys     
     </summary>
 
 #### Steps to install Yosys ####
