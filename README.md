@@ -12,7 +12,7 @@
 * [3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
     * [3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog](#3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog)
         * [3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench](#3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench)
-    * 3.2 [SKY130RTL D1SK2 - Labs using iverilog and gtkwave](#3-2-sky130rtl-d1sk2---labs-using-iverilog-and-gtkwave)
+    * [3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave](#3-2-sky130rtl-d1sk2---labs-using-iverilog-and-gtkwave)
         * [3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab](#3-2-1-sky130rtl-d1sk2-l1-lab-1-introduction-to-lab)
         * [3.2.2 SKY130RTL D1SK2 L2 Lab 2 Introduction to iVerilog GTKWave](#3-2-2-sky130rtl-d1sk2-l2-lab-2-introduction-to-iverilog-gtkwave) 
     * [3.3 SKY130RTL D1SK3 - Introduction to Yosys and Logic Synthesis](#3-3-sky130rtl-d1sk3---introduction-to-yosys-and-logic-synthesis)
@@ -361,8 +361,8 @@ Modify the switch to get the simplified netlist code
 ![Screenshot from 2023-08-09 00-15-10](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e3eff44e-fa1f-40c6-a5ed-110124a330cf)
 
 
-## Contributors ##
+## <a name="contributors"> </a> Contributors ##
 * Valipireddy Pranathi
 * Kunal Ghosh
-## Acknowledgement ##
+## <a name="acknowledgement> </a> Acknowledgement ##
 I would like to express my gratitute to VLSI System Design(VSD) for designing and structuring such a wonderful workshop which gives various insights on the tips and tricks to be followed and noticed while designing a VLSI System. It gave me a lot of perspective on how to think on a hardware level rather than on a software level. A special mention to Kunal Ghosh for helping us out throughout the workshop.
