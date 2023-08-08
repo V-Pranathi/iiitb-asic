@@ -12,7 +12,7 @@
 * 3.[Day-1- Introduction to Verilog RTL design and Synthesis](#day-1--introduction-to-verilog-rtl-design-and-synthesis)
     * [3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog](#3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog)
         * [3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench](#3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench)
-    * 3.2 [SKY130RTL D1SK2 - Labs using iverilog and gtkwave](#3-2-sky130rtl-d1sk2-labs-using-iverilog-and-gtkwave)
+    * 3.2 [SKY130RTL D1SK2 - Labs using iverilog and gtkwave](#3-2-sky130rtl-d1sk2---labs-using-iverilog-and-gtkwave)
         * [3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab](#3-2-1-sky130rtl-d1sk2-l1-lab-1-introduction-to-lab)
         * [3.2.2 SKY130RTL D1SK2 L2 Lab 2 Introduction to iVerilog GTKWave](#3-2-2-sky130rtl-d1sk2-l2-lab-2-introduction-to-iverilog-gtkwave) 
     * [3.3 SKY130RTL D1SK3 - Introduction to Yosys and Logic Synthesis](#3-3-sky130rtl-d1sk3---introduction-to-yosys-and-logic-synthesis)
@@ -190,7 +190,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 
 **Simulator:**  It is a tool used to check if it adheres to the designed specifications by simualating the code. It looks for changes on input signals to evaluate outputs. There will be no change in output if there is no change in input signals.
 
-### <a name="3-2-sky130rtl-d1sk2-labs-using-iverilog-and-gtkwave"> </a> 3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave ###
+### <a name="3-2-sky130rtl-d1sk2---labs-using-iverilog-and-gtkwave"> </a> 3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave ###
 **iverilog:** IVERILOG is an open-source Verilog simulation and synthesis tool that is commonly used for designing and verifying digital circuits described in the Verilog hardware description language (HDL).  
 **GTKwave:** GTKWave is a popular open-source waveform viewer that allows to visualize and analyze digital signal waveforms generated during simulations of digital circuits. It is often used in conjunction with simulation tools like IVERILOG to provide a graphical representation of how signals change over time in a digital design.  
 
