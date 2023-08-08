@@ -2,24 +2,24 @@
 ## Table of Contents ##
 * [1.Introduction](#1-introduction)
 * [2.Tools Installation](#2-tools-installation)
-     * Yosys
-     * iverilog
-     * gtkwave
-     * OpenSTA
-     * ngspice
-     * magic
-     * OpenLane
-* 3.Day-1- Introduction to Verilog RTL design and Synthesis
-    * 3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog
-        * 3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench
-    * 3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave
-        * 3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab
-        * 3.2.2 SKY130RTL D1SK2 L2 Lab 2 Introduction to iVerilog GTKWave 
-    * 3.3 SKY130RTL D1SK3 - Introduction to Yosys and Logic Synthesis
-        * 3.3.1 SKY130RTL D1SK3 L1 Introduction to Yosys
-        * 3.3.2 SKY130RTL D1SK3 L2 Introduction to logic synthesis 
-    * 3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs
-        * 3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux
+     * [Yosys](#yosys)
+     * [iverilog](#iverilog)
+     * [gtkwave](#gtkwave)
+     * [OpenSTA](#opensta)
+     * [ngspice](#ngspice)
+     * [magic](#magic)
+     * [OpenLane](#openlane)
+* 3.[Day-1- Introduction to Verilog RTL design and Synthesis](#day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog](#3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog)
+        * [3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench](#3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench)
+    * 3.2 [SKY130RTL D1SK2 - Labs using iverilog and gtkwave](#3-2-sky130rtl-d1sk2-labs-using-iverilog-and-gtkwave)
+        * [3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab](#3-2-1-sky130rtl-d1sk2-l1-lab-1-introduction-to-lab)
+        * [3.2.2 SKY130RTL D1SK2 L2 Lab 2 Introduction to iVerilog GTKWave](#3-2-2-sky130rtl-d1sk2-l2-lab-2-introduction-to-iverilog-gtkwave) 
+    * [3.3 SKY130RTL D1SK3 - Introduction to Yosys and Logic Synthesis](#3-3-sky130rtl-d1sk3---introduction-to-yosys-and-logic-synthesis)
+        * [3.3.1 SKY130RTL D1SK3 L1 Introduction to Yosys](#3-3-1-sky130rtl-d1sk3-l1-introduction-to-yosys)
+        * [3.3.2 SKY130RTL D1SK3 L2 Introduction to logic synthesis](#3-3-2-sky130rtl-d1sk3-l2-introduction-to-logic-synthesis) 
+    * [3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs](#3-4-sky130rtl-d1sk4---labs-using-yosys-and-sky130-pdks)
+        * [3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux](#3-4-1-sky130rtl-d1sk4-l1-lab3-yosys-1-good-mux)
 * [Contributors](#Contributors)
 * [Acknowledgement](#Acknowledgement)
 ## <a name="1-introduction"></a> 1.Introduction ##  
@@ -180,7 +180,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
     make test
 </details>
 
-## 3.Day-1- Introduction to Verilog RTL design and Synthesis ##
+## <a name="day-1--introduction-to-verilog-rtl-design-and-synthesis"> </a> 3.Day-1- Introduction to Verilog RTL design and Synthesis ##
 ### 3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog ###
 #### 3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench ####
 **RTL Design:** It is basically the implementation of specifications. RTL design lies between high-level behavioral design and low-level gate-level design. It captures the functionality of the circuit at a level where data transfers between registers are the main focus, while ignoring the specific implementation details of gates and transistors. In general,the RTL designs are described using HDLs like Verilog or VHDL.
