@@ -1,6 +1,6 @@
-# Physical Design Of ASICs #
+# RTL design using Verilog with SKY130 Technology  #
 ## Table of Contents ##
-* [Week-1 : Tools Installation](#week-1--tools-installation "Goto week-1-:-tools-installation")
+* [1.Week-1 : Tools Installation](#1.week-1--tools-installation "Goto 1.week-1-:-tools-installation")
      * Yosys
      * iverilog
      * gtkwave
@@ -10,8 +10,8 @@
      * OpenLane
 * [References](#References)
   
-## Week-1 : Tools Installation ##
-<details>
+## 1.Week-1 : Tools Installation ##
+<details> 
     <summary>
      Yosys     
     </summary>
