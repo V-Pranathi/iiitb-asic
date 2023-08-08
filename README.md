@@ -193,6 +193,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 ### 3.2 SKY130RTL D1SK2 - Labs using iverilog and gtkwave ###
 **iverilog:** IVERILOG is an open-source Verilog simulation and synthesis tool that is commonly used for designing and verifying digital circuits described in the Verilog hardware description language (HDL).  
 **GTKwave:** GTKWave is a popular open-source waveform viewer that allows to visualize and analyze digital signal waveforms generated during simulations of digital circuits. It is often used in conjunction with simulation tools like IVERILOG to provide a graphical representation of how signals change over time in a digital design.  
+
 ![Screenshot from 2023-08-08 20-02-40](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/550de8bd-55d2-4da1-910d-03020ebe5930)
 
 #### 3.2.1 SKY130RTL D1SK2 L1 Lab 1 Introduction to Lab ####
@@ -311,11 +312,13 @@ So we need cells that work fast to make combinational delay small. So now why do
  * The guidence offered to the synthesizer is called _constraints_.
 
 Below is the Synthesis illustration:
+
 ![Screenshot from 2023-08-08 23-34-46](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/6775c62a-17d6-4c42-b9bc-453cc25cf381)
 
 ### 3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs ###
 #### 3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux ####
 Invoking Yosys:
+
 ![Screenshot from 2023-08-08 23-40-16](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cad80801-05af-4607-9254-40a16759a458)
 
 Commands for synthesis:
