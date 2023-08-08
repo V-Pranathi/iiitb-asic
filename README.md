@@ -361,8 +361,8 @@ Modify the switch to get the simplified netlist code
 ![Screenshot from 2023-08-09 00-15-10](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e3eff44e-fa1f-40c6-a5ed-110124a330cf)
 
 
-## <a name="contributors"> </a> Contributors ##
+## Contributors ##
 * Valipireddy Pranathi
 * Kunal Ghosh
-## <a name="acknowledgement> </a> Acknowledgement ##
+## Acknowledgement ##
 I would like to express my gratitute to VLSI System Design(VSD) for designing and structuring such a wonderful workshop which gives various insights on the tips and tricks to be followed and noticed while designing a VLSI System. It gave me a lot of perspective on how to think on a hardware level rather than on a software level. A special mention to Kunal Ghosh for helping us out throughout the workshop.
