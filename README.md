@@ -1,7 +1,7 @@
 # RTL design using Verilog with SKY130 Technology  #
 ## Table of Contents ##
-* [1.Introduction](#1.Introduction "Goto 2.Introduction")
-* [2.Tools Installation](#2.tools-installation "Goto 2.tools-installation")
+* [1.Introduction](#1.introduction)
+* [2.Tools Installation](#2.tools-installation)
      * Yosys
      * iverilog
      * gtkwave
