@@ -48,7 +48,7 @@ $ sudo make install
 </details>
 <details>
     <summary>
-    iverilog 
+     iverilog 
     </summary>
 
 #### Steps to install iverilog ####
@@ -58,9 +58,9 @@ sudo apt-get install iverilog
 ![Screenshot from 2023-07-31 09-50-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/968ce75b-ab04-4fd6-950e-f855497277a9)
 </details>
 <details>
-<summary>
-    gtkwave
-</summary>
+    <summary>
+     gtkwave
+    </summary>
 
 #### Steps to install gtkwave ####
 
@@ -71,9 +71,9 @@ sudo apt-get install gtkwave
 ![Screenshot from 2023-07-31 09-54-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/89be5ae7-f754-4e20-8623-c5e5a810f271)
 </details>
 <details>
-   <summary>
-       OpenSTA
-   </summary> 
+    <summary>
+     OpenSTA
+    </summary> 
     
 #### Steps to install OpenSTA  ####
     
@@ -93,7 +93,7 @@ sudo apt-get install gtkwave
 </details>
 <details>
     <summary>
-        ngspice
+     ngspice
     </summary>
 
 #### Steps to install ngspice ####
@@ -112,7 +112,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 </details>
 <details>
     <summary>
-        magic
+     magic
     </summary>
     
 #### Steps to install magic ####
@@ -134,7 +134,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 </details>
 <details>
     <summary>
-        OpenLane
+     OpenLane
     </summary>
    
 #### Steps to install OpenLane ####
