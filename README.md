@@ -297,7 +297,7 @@ After the synthesis we need to check whether the netlist we got is valid or not 
 <img src=https://github.com/V-Pranathi/iiitb-asic/assets/140998763/2c9423ee-fea5-4ba2-9089-6254a9bf5b79> <br>
 </p>
 
-So we need cells that work fast to make combinational delay small. So now why do we need slower cells? To ensure that ther eare no hold issues at fliflop B, we need cells that work slowly.This complete collection forms .lib.
+So we need cells that work fast to make combinational delay small. So now why do we need slower cells? To ensure that ther eare no hold issues at fliflop B, we need cells that work slowly.This complete collection forms .lib.  
 **Faster cells vs Slower cells**
  * Load in a digital logic circuit is a capacitor.
  * Fater the charging and discharging of capacitance the lesser is the delay.
