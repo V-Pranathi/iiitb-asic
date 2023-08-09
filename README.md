@@ -292,6 +292,7 @@ After the synthesis we need to check whether the netlist we got is valid or not 
  * Collection of logic modules.
  * It contains all different kind of logic modules. like AND, OR, NOR etc.
  * It contains different variants of the same gate as well. like 2input, 3input, 4input, slow, fast, medium gates etc.
+   
 **Why different flavours of gates?** Let us consider a circuit as shown below. So in this circuit for the clock frequency to be maximum so as to make a faster circuit the time period of the clock should be minimum. However, Clock period depends on propagation delay of flipflop A, propogation delay of Combinational circuit and the setup time of the flipflop B.
 <p align="center">
 <img src=https://github.com/V-Pranathi/iiitb-asic/assets/140998763/2c9423ee-fea5-4ba2-9089-6254a9bf5b79> <br>
