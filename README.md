@@ -298,12 +298,14 @@ After the synthesis we need to check whether the netlist we got is valid or not 
 </p>
 
 So we need cells that work fast to make combinational delay small. So now why do we need slower cells? To ensure that ther eare no hold issues at fliflop B, we need cells that work slowly.This complete collection forms .lib.  
+
 **Faster cells vs Slower cells**
  * Load in a digital logic circuit is a capacitor.
  * Fater the charging and discharging of capacitance the lesser is the delay.
  * To charge/Discharge the capacitor fast, we need transistors capable of sourcing more current.
  * Wider transistors -> low delay -> More Power and Area.
  * Narrow transitor -> More delay -> Less Area and Power.
+   
 **Selection of cells** 
  * Need to guide the synthesizer to select the flavour of cells that is optimum for the implementation of logic circuits.
  * More use of fast cells can be bad interms of power and area.
