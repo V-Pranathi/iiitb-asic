@@ -182,7 +182,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
 ## <a name="3-day-1--introduction-to-verilog-rtl-design-and-synthesis"> </a> 3.Day-1- Introduction to Verilog RTL design and Synthesis ##
 ### <a name="3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog"> </a> 3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog ###
 #### <a name="3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench"> <a/> 3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench ####
-**RTL Design:** It is basically the implementation of specifications. RTL design lies between high-level behavioral design and low-level gate-level design. It captures the functionality of the circuit at a level where data transfers between registers are the main focus, while ignoring the specific implementation details of gates and transistors. In general,the RTL designs are described using HDLs like Verilog or VHDL.
+**RTL Design:** It is basically the implementation of specifications. RTL design lies between high-level behavioral design and low-level gate-level design. It captures the functionality of the circuit at a level where data transfers between registers are the main focus, while ignoring the specific implementation details of gates and transistors. In general,the RTL designs are described using HDLs like Verilog or VHDL.  
 **Test Bench:** Test bench gives stimulus to the design which is under test and verify the functionality of the design we described in verilog. Test bench is written seperately by instantiating the design which need to be simulated. 
 
 ![Screenshot from 2023-08-08 19-51-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/1e187333-b095-4772-bc5a-b96f3227d82f)
