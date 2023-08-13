@@ -733,6 +733,8 @@ For optimiszing the circuit the command to be given in yosys is
 
 **Example4:**
 
+![WhatsApp Image 2023-08-14 at 04 30 55](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/32d5bef5-f59f-4af5-8098-fd2bf01de43a)
+
 	module opt_check4 (input a , input b , input c , output y);
 		assign y = a?(b?(a & c ):c):(!c);
 	endmodule
@@ -741,6 +743,8 @@ For optimiszing the circuit the command to be given in yosys is
 ![Screenshot from 2023-08-14 03-55-45](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/19ae5714-3ad5-4d9f-ad64-dd67b5f217cc)
 
 **Example5:**
+
+![WhatsApp Image 2023-08-14 at 04 29 59](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/3941a8fd-045c-446c-a55b-385f968ee793)
 
 	module sub_module(input a , input b , output y);
 		assign y = a & b;
@@ -758,6 +762,8 @@ For optimiszing the circuit the command to be given in yosys is
 ![Screenshot from 2023-08-14 04-12-02](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/bdce7913-9df7-4d76-be8e-194bc1db41c3)
 
 **Example6:**
+
+![WhatsApp Image 2023-08-14 at 04 30 00](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5b66f682-c923-464d-bda3-5f1197009f4a)
 
 	module sub_module1(input a , input b , output y);
 	 assign y = a & b;
