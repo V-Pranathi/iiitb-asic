@@ -382,7 +382,7 @@ The default operating conditions are as shown below
 
 We will see the different flavours the same cell for and gate
 
-![Screenshot from 2023-08-13 15-40-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/89e17ed2-b32b-4bdb-b83e-1c241d924fa9)![Screenshot from 2023-08-13 15-40-53](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c63514a8-e7c7-4e29-8933-0dd82d569fc7)![Screenshot from 2023-08-13 15-41-38](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/9be2c8a9-b04a-42a5-830e-a76c2b87df0d)
+| ![Screenshot from 2023-08-13 15-40-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/89e17ed2-b32b-4bdb-b83e-1c241d924fa9) | ![Screenshot from 2023-08-13 15-40-53](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c63514a8-e7c7-4e29-8933-0dd82d569fc7) | ![Screenshot from 2023-08-13 15-41-38](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/9be2c8a9-b04a-42a5-830e-a76c2b87df0d)
 
 
 
