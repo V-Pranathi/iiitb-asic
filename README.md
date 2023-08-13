@@ -551,7 +551,7 @@ The example verilog file multiple_modules has two sub modules and those can be s
 
 ### <a name="4-3-sky130rtl-d2sk2---various-flop-coding-styles-and-optimization"> </a> 4.3 SKY130RTL D2SK2 - Various Flop Coding Styles and Optimization ###  
 #### <a name="4-3-1-sky130rtl-d2sk2---why-flops-and-flop-coding-styles"> </a> 4.3.1 SKY130RTL D2SK2 - Why Flops and Flop coding styles ####  
-**Why a Flop?**
+**Why a Flop?**  
 In a combinational circuit to get the corresponding output for the given inputs, there will be a propagation delay. But during that delay we will get intermediate outputs due to different paths in that combinational circuit which are actually called glitches. The more combinational circuits we have the more glitchy the output will be making the output unstable.  
 
 So, to avoid the glitches we need an element to store the value. That element is called a flop. By using a flop we are storing the output of the combinational circuit so as it will become the input to the next combinational only when the posedge or negedge of the clock is applied making the input stable to the combinational circuit thereby curbing the glitches.
@@ -566,7 +566,62 @@ We need to initialize the flop otherwise the succeding combinational circuit tak
 * Both Asynchronous reset and Synchronous reset
 * Both Asynchronous set and Synchronous set
 #### <a name="4-3-2-sky130rtl-d2sk2---lab-flop-synthesis-simulation"> </a> 4.3.2 SKY130RTL D2SK2 - lab Flop Synthesis Simulation ####  
-**D-flipflop with Asynchronous reset**
+**D-flipflop with Asynchronous reset --** Whenever the reset is high the output goes low irrespective of the clock is changed or not. The below figure clealry explains the asynchronous reset mode.
+
+![WhatsApp Image 2023-08-13 at 23 28 28](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/785c013c-34ef-4842-80fb-4da232e370eb)
+
+The verilog code for D-flipflop with asynchronous reset is
+
+     module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+	always @ (posedge clk , posedge async_reset)
+	begin
+		if(async_reset)
+			q <= 1'b0;
+		else	
+			q <= d;
+	end
+    endmodule
+
+**Simulation:**
+
+![Screenshot from 2023-08-13 23-45-12](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/12c1cb9d-8df7-4904-8518-a8be69d7b0b0)
+
+**Synthesized circuit**
+
+![Screenshot from 2023-08-14 00-15-44](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cc2aa36b-7f0d-49f9-b41f-e47aa6f7cdd5)
+
+**D-flipflop with Synchronous reset --** The output changes only when the clock changes i.e., depends on the clock.
+The below figure clearly explains the synchronous reset mode.  
+
+    module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+	always @ (posedge clk )
+	begin
+		if (sync_reset)
+			q <= 1'b0;
+		else	
+			q <= d;
+	end
+    endmodule
+
+![WhatsApp Image 2023-08-13 at 23 28 27(1)](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/ab533151-ffcd-475f-912f-1ff6b0f7c342)
+
+**Simulation**
+
+![Screenshot from 2023-08-13 23-49-49](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/56d459ac-ddac-4a8e-a7f2-794c19b446f8)
+
+**Synthesized circuit**
+
+![Screenshot from 2023-08-14 00-14-22](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/bf123728-02db-4efa-8943-4b0830552867)
+
+**D-flipflop with Synchronous/Asynchronous reset --**  
+
+
+
+
+
+
+
+
 
 
 
