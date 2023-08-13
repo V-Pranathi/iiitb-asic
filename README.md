@@ -644,7 +644,7 @@ The verilog code for D-flipflop with asynchronous/synchronous reset is
 
 ![Screenshot from 2023-08-14 00-42-25](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/778b8617-610d-425e-94b2-4fe4b260b485)
 
-#### <a name="4-3-3-sky130rtl-d2sk2---interesting-optimisations"> </a> 4.3.2 SKY130RTL D2SK2 - Interesting Optimisations ####  
+#### <a name="4-3-3-sky130rtl-d2sk3---interesting-optimisations"> </a> 4.3.2 SKY130RTL D2SK3 - Interesting Optimisations ####  
 
 When we perform synthesis yosys optimise the circuit based on the logic. We will see one such optimisation. 
 
@@ -678,6 +678,104 @@ _EXAMPLE2_
 ![Screenshot from 2023-08-14 01-14-47](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/d21b819b-2870-4390-9633-3e553b22e95b)
 ![Screenshot from 2023-08-14 01-15-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/27e5cee1-d5fc-4f3e-b03c-a67d974176a1)
 
+## <a name="5-day-3--combinational-and-sequential-optimizations"> </a> 5.Day-3- Combinational and Sequential Optimizations##
+### <a name="5-1-sky130rtl-d2sk1---combinational-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Combinational Logic Optimizations ###
+--> The optimisation techniques are done by the synthesis tool yosys using various techniques giving us the optimised circuit.
+--> Squeezing the logic to get the most optimised design
+   * Area and Power savings  
+_Techniques for Optimisation_  
+--> Constant Propogation
+   * Direct Optimisation
+--> Boolean logic optimisation
+   * K-Map
+   * Quine Mcklusky      
+**Constant Propogtion**
+
+![Screenshot from 2023-08-14 01-57-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/3133481e-9dd1-40b9-b152-51d2ddb229bc)
+![WhatsApp Image 2023-08-14 at 02 07 12](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/7f524025-92b1-4460-99f2-da98f47b1414)
+In the above example, based on the boolean expression we will have 6mos transistors to get the output Y. But when we make A zero i.e., making it constant we get the output just by using 2mos transistors since the logic becomes invertor. 
+**Boolean Logic Optimisation**
+Lets have an expression **assign y=a?(b?c:(c?a:0)):(!c)**. This expression is using ternary operator which can be realized using MUX's. Writing the boolean expression from the mux and then simplfying using boolean reduction techniques the output Y can be reduced to Y = ~(a^c).  
+**Note**
+For optimiszing the circuit the command to be given in yosys is
+
+	yosys> opt_clean -purge
+ 
+**Example1:**
+![WhatsApp Image 2023-08-14 at 03 34 25](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/025c523c-746e-429f-a3c9-33fbb3066ac3)
+
+	module opt_check (input a , input b , output y);
+		assign y = a?b:0;
+	endmodule
+**Optimized Circuit and netlist**
+![Screenshot from 2023-08-14 03-40-23](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8f748961-86a1-4dab-a0ec-218777822286)
+![Screenshot from 2023-08-14 03-43-26](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/986b627f-95a5-417b-98e3-2ed1283ba133)
+
+**Example2:**
+![WhatsApp Image 2023-08-14 at 03 34 24(1)](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/3c3e1485-c87e-4917-8b27-c22dd8af12e8)
+
+	module opt_check2 (input a , input b , output y);
+		assign y = a?1:b;
+	endmodule
+**Optimized Circuit and netlist** 
+![Screenshot from 2023-08-14 03-46-43](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5b349a3b-8ae0-46b8-9cb6-0ac238dca9ac)
+![Screenshot from 2023-08-14 03-47-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/360f5a18-fda1-4279-bef8-1554f32677df)
+
+**Example3:**
+![WhatsApp Image 2023-08-14 at 03 34 24(2)](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c94ee5f0-6223-4b02-ab8d-a2c83ead4702)
+
+ 	module opt_check3 (input a , input b, input c , output y);
+		assign y = a?(c?b:0):0;
+	endmodule
+**Optimized Circuit and netlist** 
+![Screenshot from 2023-08-14 03-48-08](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c19114a2-dae4-428b-9f14-049732bd22e5)
+![Screenshot from 2023-08-14 03-48-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/9b0fce98-dd94-4fe2-9efc-310a246c62c1)
+
+**Example4:**
+
+	module opt_check4 (input a , input b , input c , output y);
+		assign y = a?(b?(a & c ):c):(!c);
+	endmodule
+**Optimized Circuit and netlist** 
+![Screenshot from 2023-08-14 03-55-18](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/d58a4f94-0e72-4c32-bf1f-eab630fc7ce2)
+![Screenshot from 2023-08-14 03-55-45](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/19ae5714-3ad5-4d9f-ad64-dd67b5f217cc)
+
+**Example5:**
+
+	module sub_module(input a , input b , output y);
+		assign y = a & b;
+	endmodule
+
+	module multiple_module_opt2(input a , input b , input c , input d , output y);
+			wire n1,n2,n3;
+		sub_module U1 (.a(a) , .b(1'b0) , .y(n1));
+		sub_module U2 (.a(b), .b(c) , .y(n2));
+		sub_module U3 (.a(n2), .b(d) , .y(n3));
+		sub_module U4 (.a(n3), .b(n1) , .y(y));
+	endmodule
+**Optimized Circuit and netlist** 
+
+
+
+**Example6:**
+
+	module sub_module1(input a , input b , output y);
+	 assign y = a & b;
+	endmodule
+
+	module sub_module2(input a , input b , output y);
+	 assign y = a^b;
+	endmodule
+
+	module multiple_module_opt(input a , input b , input c , input d , output y);
+	wire n1,n2,n3;
+	sub_module1 U1 (.a(a) , .b(1'b1) , .y(n1));
+	sub_module2 U2 (.a(n1), .b(1'b0) , .y(n2));
+	sub_module2 U3 (.a(b), .b(d) , .y(n3));
+
+	assign y = c | (b & n1); 
+	endmodule
+**Optimized Circuit and netlist** 
 
 
 
@@ -686,17 +784,21 @@ _EXAMPLE2_
 
 
 
+### <a name="5-2-sky130rtl-d2sk1---sequential-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Sequential Logic Optimizations ###
+--> Basic - Sequential Constant Optimisation
+--> Advanced
+     * State optimisation
+     * Retiming
+     * Sequential Logic Cloning (Floor Plan Aware Synthesis)
+**Basic**
+**Sequential Constant Optimisation-** 
 
+**Advanced**
+**State Optimisation:** This is optimisation of unused state. Using this technique we can come up with most optimised state machine.
 
+**Cloning:** This is done when performing PHYSICAL AWARE SYNTHESIS. Lets consider a flop A which is connected to flop B and flop C through a combination logic. If B and C are placed far from A in the flooerplan, there is a routing path delay. To avoid this, we connect A to two intermediate flops and then from these flops the output is sent to B and C thereby decreasing the delay. This process is called cloning since we are generating two new flops with same functionality as A.
 
-
-
-
-
-
-
-
-
+**Retiming:** Retiming is a powerful sequential optimization technique used to move registers across the combinational logic or to optimize the number of registers to improve performance via power-delay trade-off, without changing the input-output behavior of the circuit.
 
 
 
