@@ -658,7 +658,7 @@ Illustration of a number multiply by 2:
 
 ![WhatsApp Image 2023-08-14 at 00 34 38](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/4f509da2-4181-43bf-a73b-e770dd4cf8a1)  
 
-**Simulation**
+**Synthesized circuit and Netlist**
 
 ![Screenshot from 2023-08-14 00-47-45](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/edb0d405-ea2c-4c4b-bc79-e398fa6a2c8f)
 ![Screenshot from 2023-08-14 00-59-33](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c4010592-e43f-44fc-b9d6-d40866e67e53)
@@ -671,8 +671,12 @@ _EXAMPLE2_
 
  For the above example we dont need any hardware to implement it.
  
+ ![WhatsApp Image 2023-08-14 at 01 11 08](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f7571e12-934a-457b-8aea-795b61b057f5)
 
+**Synthesized circuit and Netlist**
 
+![Screenshot from 2023-08-14 01-14-47](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/d21b819b-2870-4390-9633-3e553b22e95b)
+![Screenshot from 2023-08-14 01-15-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/27e5cee1-d5fc-4f3e-b03c-a67d974176a1)
 
 
 
