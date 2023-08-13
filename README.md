@@ -366,11 +366,14 @@ Modify the switch to get the simplified netlist code
 ### <a name="4-1-sky130rtl-d2sk1---introduction-to-timing--libs"> </a> 4.1 SKY130RTL D2SK1 - Introduction to timing .libs ###
 As we already know .lib is a collection of standard cells. Now we will see what actually .lib file contains.  
 ![Screenshot from 2023-08-13 14-54-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cf3a1d1f-1bd1-4e42-b376-d7a7452d7ac8)  
-In the above screenshot we can see that there is this "sky130_fd_sc_hd__tt_025C_1v80". Actually there is some significance for that.    
+
+In the above screenshot we can see that there is this "sky130_fd_sc_hd__tt_025C_1v80". Actually there is some significance for that.  
+
 _**130** 130nm library_  
 _**tt** signifies the process which is typical_  
 _**025C** signifies the temperature_  
-_ **1v80** signifies the voltage_  
+_**1v80** signifies the voltage_  
+
 The variations in PVT(Proces,Voltage and Temperature) determines how the semiconductor behaves.  
 
 
