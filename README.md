@@ -390,7 +390,167 @@ What it is showing?
 * and2_0 -- taking the least area, more delay and low power.  
 * and2_1 -- taking more area, less delay and high power.
 * and2_2 -- taking the largest area, larger delay and highest power.
+### <a name="4-2-sky130rtl-d2sk2---hierarchical-vs-flat-synthesis"> </a> 4.2 SKY130RTL D2SK2 - Hierarchical vs Flat Synthesis ### 
+We can explain hierarchial and flat synthesis using an example module(which has two submodules) given below:  
+    
+    module sub_module2 (input a, input b, output y);
+        assign y = a | b;
+    endmodule
+
+    module sub_module1 (input a, input b, output y);
+        assign y = a&b;
+    endmodule
+
+
+    module multiple_modules (input a, input b, input c , output y);
+        wire net1;
+        sub_module1 u1(.a(a),.b(b),.y(net1));  //net1 = a&b
+        sub_module2 u2(.a(net1),.b(c),.y(y));  //y = net1|c ,ie y = a&b + c;
+    endmodule
+
+**Hierarchial synthesis:** In the hierarchial synthesis the hierarchies are preserved. We can see the sub_module1(u1) and sub_module2 (u2) as above. The hierarchial netlist code is given below.
+
+    module multiple_modules(a, b, c, y);
+          input a;
+          wire a;
+          input b;
+          wire b;
+          input c;
+          wire c;
+          wire net1;
+          output y;
+          wire y;
+      sub_module1 u1 (
+            .a(a),
+            .b(b),
+            .y(net1)
+              );
+      sub_module2 u2 (
+            .a(net1),
+            .b(c),
+            .y(y)
+              );
+    endmodule
+
+    module sub_module1(a, b, y);
+          wire _0_;
+          wire _1_;
+          wire _2_;
+          input a;
+          wire a;
+          input b;
+          wire b;
+          output y;
+          wire y;
+      sky130_fd_sc_hd__and2_0 _3_ (
+                .A(_1_),
+                .B(_0_),
+                .X(_2_)
+              );
+      assign _1_ = b;
+      assign _0_ = a;
+      assign y = _2_;
+    endmodule
+
+    module sub_module2(a, b, y);
+              wire _0_;
+              wire _1_;
+              wire _2_;
+              input a;
+              wire a;
+              input b;
+              wire b;
+              output y;
+              wire y;
+      sky130_fd_sc_hd__or2_0 _3_ (
+                .A(_1_),
+                .B(_0_),
+                .X(_2_)
+                  );
+      assign _1_ = b;
+      assign _0_ = a;
+      assign y = _2_;
+    endmodule
+    
+![Screenshot from 2023-08-13 22-00-27](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/307df294-99fe-43c6-a8a8-fa62226d2287)
+
+**Flat synthesis:** In the flat synthesis hierarchies are flattened out and directly instantiates gates here. The flattened netlist is given below.
+
+    module multiple_modules(a, b, c, y);
+          wire _0_;
+          wire _1_;
+          wire _2_;
+          wire _3_;
+          wire _4_;
+          wire _5_;
+          input a;
+          wire a;
+          input b;
+          wire b;
+          input c;
+          wire c;
+          wire net1;
+          wire \u1.a ;
+          wire \u1.b ;
+          wire \u1.y ;
+          wire \u2.a ;
+          wire \u2.b ;
+          wire \u2.y ;
+          output y;
+          wire y;
+      sky130_fd_sc_hd__and2_0 _6_ (
+                .A(_1_),
+                .B(_0_),
+                .X(_2_)
+                  );
+      sky130_fd_sc_hd__or2_0 _7_ (
+                .A(_4_),
+                .B(_3_),
+                .X(_5_)
+                  );
+      assign _4_ = \u2.b ;
+      assign _3_ = \u2.a ;
+      assign \u2.y  = _5_;
+      assign \u2.a  = net1;
+      assign \u2.b  = c;
+      assign y = \u2.y ;
+      assign _1_ = \u1.b ;
+      assign _0_ = \u1.a ;
+      assign \u1.y  = _2_;
+      assign \u1.a  = a;
+      assign \u1.b  = b;
+      assign net1 = \u1.y ;
+    endmodule
+
+![Screenshot from 2023-08-13 21-58-17](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/19ab9080-0dd4-4de3-8576-2e46f109bc5f)  
+
+The commands for hierarchial and flat synthesis are:
+
+    $ yosys
+    yosys> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    yosys> read_verilog multiple_modules.v
+    yosys> synth -top multiple_modules
+    yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+    //hierarchial synthesis
+    yosys> show multiple_modules
+    yosys> write_verilog -noattr multiple_modules_hier.v
+    yosys> !vim multiple_modules_hier.v
+
+    //flat synthesis
+    yosys> flatten
+    yosys> write_verilog -noattr multiple_modules_flat.v
+    yosys> !vim multiple_modules_flat.v
+
+The example verilog file multiple_modules has two sub modules and those can be synthesized at sub module level.. We control the module which we are synthesizing using the keyworf _**"synth -top <module_name>"**_.  
+**Why we need sub module level synthesis?**  
+* Sub module level synthesis is preferred when we have multiple instances of same module. If the same module is getting instantiated multiple times instead of synthesizing the same module multiple times we can synthesize it once and replicate the corresponding netlist multiple times and stitch together to get the top module netlist.
+* Divide and Conquer approach. If the design is very massive the tools might not do a good job. So what we do is we synthesize parts by parts which gives us optimized netlists and all netlists can be stitched to get the top module netlist.
   
+![Screenshot from 2023-08-13 22-33-58](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e6c393c6-8f02-46ca-807b-6edb984910b7)
+
+
+ 
 
 
 
