@@ -365,6 +365,7 @@ Modify the switch to get the simplified netlist code
 ## <a name="4-day-2--timing libs--hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles"> </a> 4.Day-2- Timing libs, hierarchical vs flat synthesis and efficient flop coding styles ##
 ### <a name="4-1-sky130rtl-d2sk1---introduction-to-timing--libs"> </a> 4.1 SKY130RTL D2SK1 - Introduction to timing .libs ###
 As we already know .lib is a collection of standard cells. Now we will see what actually .lib file contains.  
+
 ![Screenshot from 2023-08-13 14-54-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cf3a1d1f-1bd1-4e42-b376-d7a7452d7ac8)  
 
 In the above screenshot we can see that there is this "sky130_fd_sc_hd__tt_025C_1v80". Actually there is some significance for that.  
@@ -375,6 +376,18 @@ _**025C** signifies the temperature_
 _**1v80** signifies the voltage_  
 
 The variations in PVT(Proces,Voltage and Temperature) determines how the semiconductor behaves.  
+The default operating conditions are as shown below 
+
+![Screenshot from 2023-08-13 15-24-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/9fa854ff-7ecd-466b-ba59-38589c3f296e)  
+
+We will see the different flavours the same cell for and gate
+
+![Screenshot from 2023-08-13 15-40-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/89e17ed2-b32b-4bdb-b83e-1c241d924fa9)![Screenshot from 2023-08-13 15-40-53](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c63514a8-e7c7-4e29-8933-0dd82d569fc7)![Screenshot from 2023-08-13 15-41-38](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/9be2c8a9-b04a-42a5-830e-a76c2b87df0d)
+
+
+
+
+
 
 
 
