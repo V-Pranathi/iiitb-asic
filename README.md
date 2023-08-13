@@ -593,6 +593,10 @@ The verilog code for D-flipflop with asynchronous reset is
 **D-flipflop with Synchronous reset --** The output changes only when the clock changes i.e., depends on the clock.
 The below figure clearly explains the synchronous reset mode.  
 
+![WhatsApp Image 2023-08-13 at 23 28 27(1)](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/ab533151-ffcd-475f-912f-1ff6b0f7c342)
+
+THe verilog code synchronous reset is:
+
     module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
 	always @ (posedge clk )
 	begin
@@ -603,7 +607,7 @@ The below figure clearly explains the synchronous reset mode.
 	end
     endmodule
 
-![WhatsApp Image 2023-08-13 at 23 28 27(1)](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/ab533151-ffcd-475f-912f-1ff6b0f7c342)
+
 
 **Simulation**
 
@@ -611,9 +615,66 @@ The below figure clearly explains the synchronous reset mode.
 
 **Synthesized circuit**
 
-![Screenshot from 2023-08-14 00-14-22](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/bf123728-02db-4efa-8943-4b0830552867)
+![Screenshot from 2023-08-14 00-14-22](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/bf123728-02db-4efa-8943-4b0830552867)  
 
-**D-flipflop with Synchronous/Asynchronous reset --**  
+
+**D-flipflop with Synchronous/Asynchronous reset --**
+
+![WhatsApp Image 2023-08-13 at 23 28 27](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5a2c0c51-53d5-455c-a4d1-0ebc2fa65e65)
+
+The verilog code for D-flipflop with asynchronous/synchronous reset is
+
+	module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+	always @ (posedge clk , posedge async_reset)
+	begin
+        if(async_reset)
+                q <= 1'b0;
+        else if (sync_reset)
+                q <= 1'b0;
+        else
+                q <= d;
+	end
+	endmodule
+ 
+ **Simulation**
+ 
+![Screenshot from 2023-08-14 00-37-42](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/34a2ce00-ee75-4668-a707-55b99fbcdd27)  
+
+**Synthesis**
+
+![Screenshot from 2023-08-14 00-42-25](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/778b8617-610d-425e-94b2-4fe4b260b485)
+
+#### <a name="4-3-3-sky130rtl-d2sk2---interesting-optimisations"> </a> 4.3.2 SKY130RTL D2SK2 - Interesting Optimisations ####  
+
+When we perform synthesis yosys optimise the circuit based on the logic. We will see one such optimisation. 
+
+_EXAMPLE1:_ In the below example we can see the multiplication of a number by 2 doesnt really need any extra hardware we just need to append the LSB's with zeroes and the remaining bits are the input bits of same,that is realized by grouding the LSB's and wiring the input properly to the output. Similary, for any number multiply with multiples of 2 we just need to append lsb's with zeroes.
+
+	module mul2 (input [2:0] a, output [3:0] y);
+	assign y = a * 2;
+	endmodule
+
+Illustration of a number multiply by 2:
+
+![WhatsApp Image 2023-08-14 at 00 34 38](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/4f509da2-4181-43bf-a73b-e770dd4cf8a1)  
+
+**Simulation**
+
+![Screenshot from 2023-08-14 00-47-45](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/edb0d405-ea2c-4c4b-bc79-e398fa6a2c8f)
+![Screenshot from 2023-08-14 00-59-33](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c4010592-e43f-44fc-b9d6-d40866e67e53)
+
+_EXAMPLE2_ 
+
+	module mult8 (input [2:0] a , output [5:0] y);
+		assign y = a * 9;
+	endmodule
+
+ For the above example we dont need any hardware to implement it.
+ 
+
+
+
+
 
 
 
