@@ -753,9 +753,9 @@ For optimiszing the circuit the command to be given in yosys is
 		sub_module U3 (.a(n2), .b(d) , .y(n3));
 		sub_module U4 (.a(n3), .b(n1) , .y(y));
 	endmodule
-**Optimized Circuit and netlist** 
-
-
+**Optimized Circuit and netlist**  
+![Screenshot from 2023-08-14 04-10-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/b0d07142-212a-45be-9f6d-b2c00bfd3c4d)
+![Screenshot from 2023-08-14 04-12-02](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/bdce7913-9df7-4d76-be8e-194bc1db41c3)
 
 **Example6:**
 
@@ -776,22 +776,17 @@ For optimiszing the circuit the command to be given in yosys is
 	assign y = c | (b & n1); 
 	endmodule
 **Optimized Circuit and netlist** 
+![Screenshot from 2023-08-14 04-14-58](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f4f232f8-7cc7-43ea-890a-8c3885db4a36)
+![Screenshot from 2023-08-14 04-15-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e78b9dcb-59cd-42a0-935f-7f0eda683966)
 
-
-
-
-
-
-
-
-### <a name="5-2-sky130rtl-d2sk1---sequential-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Sequential Logic Optimizations ###
---> Basic - Sequential Constant Optimisation
---> Advanced
-     * State optimisation
-     * Retiming
-     * Sequential Logic Cloning (Floor Plan Aware Synthesis)
-**Basic**
-**Sequential Constant Optimisation-** 
+### <a name="5-2-sky130rtl-d2sk1---sequential-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Sequential Logic Optimizations ###  
+--> Basic - Sequential Constant Optimisation  
+--> Advanced  
+     * State optimisation  
+     * Retiming  
+     * Sequential Logic Cloning (Floor Plan Aware Synthesis)  
+**Basic**  
+**Sequential Constant Optimisation-**   
 
 **Advanced**
 **State Optimisation:** This is optimisation of unused state. Using this technique we can come up with most optimised state machine.
