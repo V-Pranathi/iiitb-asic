@@ -549,8 +549,31 @@ The example verilog file multiple_modules has two sub modules and those can be s
   
 ![Screenshot from 2023-08-13 22-33-58](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e6c393c6-8f02-46ca-807b-6edb984910b7)
 
+### <a name="4-3-sky130rtl-d2sk2---various-flop-coding-styles-and-optimization"> </a> 4.3 SKY130RTL D2SK2 - Various Flop Coding Styles and Optimization ###  
+#### <a name="4-3-1-sky130rtl-d2sk2---why-flops-and-flop-coding-styles"> </a> 4.3.1 SKY130RTL D2SK2 - Why Flops and Flop coding styles ####  
+**Why a Flop?**
+In a combinational circuit to get the corresponding output for the given inputs, there will be a propagation delay. But during that delay we will get intermediate outputs due to different paths in that combinational circuit which are actually called glitches. The more combinational circuits we have the more glitchy the output will be making the output unstable.  
 
- 
+So, to avoid the glitches we need an element to store the value. That element is called a flop. By using a flop we are storing the output of the combinational circuit so as it will become the input to the next combinational only when the posedge or negedge of the clock is applied making the input stable to the combinational circuit thereby curbing the glitches.
+
+We need to initialize the flop otherwise the succeding combinational circuit takes garbage value as input. So we have control pins **reset** and **set**. 
+
+**Flop coding styles**
+* Asynchronous reset
+* Synchronous reset
+* Asynchronous set
+* Synchronous set
+* Both Asynchronous reset and Synchronous reset
+* Both Asynchronous set and Synchronous set
+#### <a name="4-3-2-sky130rtl-d2sk2---lab-flop-synthesis-simulation"> </a> 4.3.2 SKY130RTL D2SK2 - lab Flop Synthesis Simulation ####  
+**D-flipflop with Asynchronous reset**
+
+
+
+
+
+
+
 
 
 
