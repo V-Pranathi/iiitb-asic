@@ -1011,7 +1011,7 @@ _EXAMPLE2_
 **Synthesis**
 ![Screenshot from 2023-08-14 22-59-00](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e685754d-258b-4efe-952b-59cb11a4893a)
 
-**GLS Simulation**
+**GLS Simulation**  
 ![Screenshot from 2023-08-14 23-01-25](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/7dce4f61-be6a-4315-a764-4230848fea44)
 Since all the inputs are not mentioned in the sensitivity list the simualtion synthesis mismatch is happening.
 
@@ -1029,10 +1029,10 @@ _EXAMPLE1_
 **Simulation**
 ![Screenshot from 2023-08-14 23-12-59](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8c81ddb3-998d-41bb-864c-540d9ec882a1)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-14 23-16-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8a511f4e-94ed-4486-aae8-f2d58af9a4e1)
 
-**GLS Simulation**
+**GLS Simulation**  
 ![Screenshot from 2023-08-14 23-18-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/b6064095-9943-467b-bc2a-45eda25b3a04)
 Due to the improper use of blocking statements there is a mismatch.
 
