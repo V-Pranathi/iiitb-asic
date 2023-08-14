@@ -986,7 +986,7 @@ _EXAMPLE1_
  **Simulation**
 ![Screenshot from 2023-08-14 22-36-00](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/4ef2548c-1b5b-4e7b-86b9-00b7873d854d)
 
- **Synthesis**
+ **Synthesis**   
 ![Screenshot from 2023-08-14 22-41-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/1f7a90f1-931f-47a8-abd9-c205df083aa6)
 
  **GLS Simulation**
@@ -1008,7 +1008,7 @@ _EXAMPLE2_
 **Simulation**
 ![Screenshot from 2023-08-14 22-54-05](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f36bc62d-6350-4587-8270-c51fe31599f8)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-14 22-59-00](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e685754d-258b-4efe-952b-59cb11a4893a)
 
 **GLS Simulation**  
