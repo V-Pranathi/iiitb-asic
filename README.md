@@ -20,9 +20,32 @@
         * [3.3.2 SKY130RTL D1SK3 L2 Introduction to logic synthesis](#3-3-2-sky130rtl-d1sk3-l2-introduction-to-logic-synthesis) 
     * [3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs](#3-4-sky130rtl-d1sk4---labs-using-yosys-and-sky130-pdks)
         * [3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux](#3-4-1-sky130rtl-d1sk4-l1-lab3-yosys-1-good-mux)
-* 
+* [4.Day-2- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [4.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    *  [4.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    *   [4.3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    	* [4.3.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+     	* [4.3.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+      	* [4.3.3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+* [5.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [5.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [5.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [5.3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+* [6.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [6.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    	* [6.1.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+     	* [6.1.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [6.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+    * [6.3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+* [7.Day-5- If, case, for loop and for generate](#7-day-5--if--case--for-loop-and-for-generate)
+    * [7.1 SKY130RTL D5SK1 - If Case constructs](#7-1-sky130rtl-d5sk1---if-case-constructs)
+    * [7.2 SKY130RTL D5SK2 - Labs on "Incomplete If Case"](#7-2-sky130rtl-d5sk2---labs-on--incomplete-if-case-)
+    * [7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case"](#7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case-)
+    * [7.4 SKY130RTL D5SK4 - For Loop and For Generate](#7-4-sky130rtl-d5sk4---for-loop-and-for-generate)
+    * [7.5 SKY130RTL D5SK5 -Labs on For Loop and For Generate](#7-5-sky130rtl-d5sk5---labs-on-for-loop-and-for-generate) 
 * [Contributors](#contributors)
 * [Acknowledgement](#acknowledgement)
+
 ## <a name="1-introduction"></a> 1.Introduction ##  
 This report is about the labs we perform from VSD-IAT on RTL designing and synthesis using open source tools. The tools used are iVerilog, GTKWave, Yosy and Skywater 130nm Standard Cell Libraries. 
 ## <a name="2-tools-installation"></a> 2.Tools Installation ##
@@ -1075,7 +1098,7 @@ _Syntax for nested if_
 
 **Caveats in Case** Caveats in case occur due to two reasons. One is incomplete case statements and can be resolved by default case and the other is partial assignments in case statements. And also in case statements we should not have overlapping cases.
 
-### <a name="7-2-sky130rtl-d5sk2---labs-on--incomplete-if-case"> </a> 7.2 SKY130RTL D5SK2 - Labs on "Incomplete If Case" ###
+### <a name="7-2-sky130rtl-d5sk2---labs-on--incomplete-if-case-"> </a> 7.2 SKY130RTL D5SK2 - Labs on "Incomplete If Case" ###
 _EXAMPLE1_
 This incomplete if construct forms a connection between i0 and output y i.e, D-latch with input as i1 and i0 will be the enable for it.
 
@@ -1112,7 +1135,7 @@ The below code is equivalent to two 2:1 mux with i0 and i2 as select lines with 
 **Synthesis**  
 ![Screenshot from 2023-08-15 00-56-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/155d5e16-4435-4547-a195-77f2b0de3945)
 
-### <a name="7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case"> </a> 7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case" ###
+### <a name="7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case-"> </a> 7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case" ###
 _EXAMPLE1_    
 This is an example of incomplete case where other two combinations 10 and 11 were not included. This is infer a latch for the multiplexer and connect i2 and i3 with the output.
 
