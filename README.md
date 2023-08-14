@@ -788,9 +788,9 @@ For optimiszing the circuit the command to be given in yosys is
 ### <a name="5-2-sky130rtl-d2sk1---sequential-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Sequential Logic Optimizations ###  
 --> Basic - Sequential Constant Optimisation  
 --> Advanced  
-     *State optimisation  
-     *Retiming  
-     *Sequential Logic Cloning (Floor Plan Aware Synthesis)  
+     * State optimisation  
+     * Retiming  
+     * Sequential Logic Cloning (Floor Plan Aware Synthesis)  
       
 **EXAMPLE1**
 Here flop will be inferred as the output is not constant
