@@ -678,7 +678,7 @@ _EXAMPLE2_
 ![Screenshot from 2023-08-14 01-14-47](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/d21b819b-2870-4390-9633-3e553b22e95b)
 ![Screenshot from 2023-08-14 01-15-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/27e5cee1-d5fc-4f3e-b03c-a67d974176a1)
 
-## <a name="5-day-3--combinational-and-sequential-optimizations"> </a> 5.Day-3- Combinational and Sequential Optimizations##
+## <a name="5-day-3--combinational-and-sequential-optimizations"> </a> 5.Day-3- Combinational and Sequential Optimizations ##
 ### <a name="5-1-sky130rtl-d2sk1---combinational-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Combinational Logic Optimizations ###
 --> The optimisation techniques are done by the synthesis tool yosys using various techniques giving us the optimised circuit.
 --> Squeezing the logic to get the most optimised design
@@ -901,11 +901,43 @@ Here flop will not be inferred as the output is constant
 **Retiming:** Retiming is a powerful sequential optimization technique used to move registers across the combinational logic or to optimize the number of registers to improve performance via power-delay trade-off, without changing the input-output behavior of the circuit.
 
 ### <a name="5-3-sky130rtl-d4sk3---sequential-logic-optimizations-for-unused-outputs"> </a> 5.1 SKY130RTL D4SK3 - Sequential Logic Optimizations for unused outputs ###  
+**EXAMPLE1**
+![WhatsApp Image 2023-08-14 at 06 12 42](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/35eb43db-b05c-41fc-b222-40cb3317c3d0)
 
+ 	module counter_opt (input clk , input reset , output q);
+	reg [2:0] count;
+	assign q = count[0];
+	always @(posedge clk ,posedge reset)
+	begin
+		if(reset)
+			count <= 3'b000;
+		else
+			count <= count + 1;
+	end
+	endmodule
+**Synthesis**
+![Screenshot from 2023-08-14 06-14-48](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/34b49eb3-7f9e-4c57-ba84-f94c950b485a)
+![Screenshot from 2023-08-14 06-09-12](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e030cd78-6d5a-4983-963e-f7fc8b14b8c5)
 
+**Modified counter logic**
 
+	module counter_opt (input clk , input reset , output q);
+	reg [2:0] count;
+	assign q = {count[2:0]==3'b100};
+	always @(posedge clk ,posedge reset)
+	begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+	end
+	endmodule
+**Synthesis**
+![Screenshot from 2023-08-14 06-26-23](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/04c40d9b-0503-4461-9032-5e91df681711)
+![Screenshot from 2023-08-14 06-23-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/35a16550-7985-447a-87aa-c01da792ca0a)
 
 ## Contributors ##
-
+* Valipireddy Pranathi
+* Kunal Ghosh
 ## Acknowledgement ##
 
