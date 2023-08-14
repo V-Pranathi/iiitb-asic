@@ -550,8 +550,8 @@ The example verilog file multiple_modules has two sub modules and those can be s
   
 ![Screenshot from 2023-08-13 22-33-58](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e6c393c6-8f02-46ca-807b-6edb984910b7)
 
-### <a name="4-3-sky130rtl-d2sk2---various-flop-coding-styles-and-optimization"> </a> 4.3 SKY130RTL D2SK2 - Various Flop Coding Styles and Optimization ###  
-#### <a name="4-3-1-sky130rtl-d2sk2---why-flops-and-flop-coding-styles"> </a> 4.3.1 SKY130RTL D2SK2 - Why Flops and Flop coding styles ####  
+### <a name="4-3-sky130rtl-d2sk3---various-flop-coding-styles-and-optimization"> </a> 4.3 SKY130RTL D2SK3 - Various Flop Coding Styles and Optimization ###  
+#### <a name="4-3-1-sky130rtl-d2sk3---why-flops-and-flop-coding-styles"> </a> 4.3.1 SKY130RTL D2SK3 - Why Flops and Flop coding styles ####  
 **Why a Flop?**  
 In a combinational circuit to get the corresponding output for the given inputs, there will be a propagation delay. But during that delay we will get intermediate outputs due to different paths in that combinational circuit which are actually called glitches. The more combinational circuits we have the more glitchy the output will be making the output unstable.  
 
@@ -566,7 +566,7 @@ We need to initialize the flop otherwise the succeding combinational circuit tak
 * Synchronous set
 * Both Asynchronous reset and Synchronous reset
 * Both Asynchronous set and Synchronous set
-#### <a name="4-3-2-sky130rtl-d2sk2---lab-flop-synthesis-simulation"> </a> 4.3.2 SKY130RTL D2SK2 - lab Flop Synthesis Simulation ####  
+#### <a name="4-3-2-sky130rtl-d2sk3---lab-flop-synthesis-simulation"> </a> 4.3.2 SKY130RTL D2SK3 - lab Flop Synthesis Simulation ####  
 **D-flipflop with Asynchronous reset --** Whenever the reset is high the output goes low irrespective of the clock is changed or not. The below figure clealry explains the asynchronous reset mode.
 
 ![WhatsApp Image 2023-08-13 at 23 28 28](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/785c013c-34ef-4842-80fb-4da232e370eb)
@@ -645,7 +645,7 @@ The verilog code for D-flipflop with asynchronous/synchronous reset is
 
 ![Screenshot from 2023-08-14 00-42-25](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/778b8617-610d-425e-94b2-4fe4b260b485)
 
-#### <a name="4-3-3-sky130rtl-d2sk3---interesting-optimisations"> </a> 4.3.2 SKY130RTL D2SK3 - Interesting Optimisations ####  
+#### <a name="4-3-3-sky130rtl-d2sk3---interesting-optimisations"> </a> 4.3.3 SKY130RTL D2SK3 - Interesting Optimisations ####  
 
 When we perform synthesis yosys optimise the circuit based on the logic. We will see one such optimisation. 
 
@@ -786,7 +786,7 @@ For optimiszing the circuit the command to be given in yosys is
 ![Screenshot from 2023-08-14 04-14-58](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f4f232f8-7cc7-43ea-890a-8c3885db4a36)
 ![Screenshot from 2023-08-14 04-15-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e78b9dcb-59cd-42a0-935f-7f0eda683966)
 
-### <a name="5-2-sky130rtl-d2sk1---sequential-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Sequential Logic Optimizations ###  
+### <a name="5-2-sky130rtl-d2sk2---sequential-logic-optimizations"> </a> 5.2 SKY130RTL D2SK2 - Sequential Logic Optimizations ###  
 --> Basic - Sequential Constant Optimisation  
 --> Advanced  
 * State optimisation  
@@ -901,7 +901,7 @@ Here flop will not be inferred as the output is constant
 
 **Retiming:** Retiming is a powerful sequential optimization technique used to move registers across the combinational logic or to optimize the number of registers to improve performance via power-delay trade-off, without changing the input-output behavior of the circuit.
 
-### <a name="5-3-sky130rtl-d4sk3---sequential-logic-optimizations-for-unused-outputs"> </a> 5.1 SKY130RTL D4SK3 - Sequential Logic Optimizations for unused outputs ###  
+### <a name="5-3-sky130rtl-d4sk3---sequential-logic-optimizations-for-unused-outputs"> </a> 5.3 SKY130RTL D4SK3 - Sequential Logic Optimizations for unused outputs ###  
 **EXAMPLE1**
 ![WhatsApp Image 2023-08-14 at 06 12 42](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/35eb43db-b05c-41fc-b222-40cb3317c3d0)
 
@@ -937,7 +937,7 @@ Here flop will not be inferred as the output is constant
 ![Screenshot from 2023-08-14 06-26-23](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/04c40d9b-0503-4461-9032-5e91df681711)
 ![Screenshot from 2023-08-14 06-23-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/35a16550-7985-447a-87aa-c01da792ca0a)
 
-## <a name="6-day-4--gls--blocking-vs-non-blocking-and-synthesis-simulation-mismatch"> </a> 6.Day-4--GLS, Blocking VS Non-blocking and Synthesis-Simulation mismatch ##
+## <a name="6-day-4--gls--blocking-vs-non-blocking-and-synthesis-simulation-mismatch"> </a> 6.Day-4- GLS, Blocking VS Non-blocking and Synthesis-Simulation mismatch ##
 ### <a name="6-1-sky130rtl-d4sk1---gls--synthesis-simulation-mismatch-and-blocking-non-blocking-statements"> </a> 6.1 SKY130RTL D4SK1 - GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking Statements ###
 #### <a name="6-1-1-sky130rtl-d4sk1-l1-gls-concepts-and-flow-using-iverilog"> </a> 6.1.1 SKY130RTL D4SK1 L1 GLS Concepts and Flow Using iVerilog ####
 **What is GLS(Gate level simulation)?**  
@@ -1016,7 +1016,7 @@ _EXAMPLE2_
 ![Screenshot from 2023-08-14 23-01-25](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/7dce4f61-be6a-4315-a764-4230848fea44)
 Since all the inputs are not mentioned in the sensitivity list the simualtion synthesis mismatch is happening.
 
-### <a name="6-2-sky130rtl-d4sk3---labs-on-synthesis-simulation-mismatch-for-blocking-statements"> </a> 6.2 SKY130RTL D4SK3 - Labs on Synthesis-Simulation mismatch for blocking statements ###  
+### <a name="6-3-sky130rtl-d4sk3---labs-on-synthesis-simulation-mismatch-for-blocking-statements"> </a> 6.3 SKY130RTL D4SK3 - Labs on Synthesis-Simulation mismatch for blocking statements ###  
 _EXAMPLE1_
 
 	module blocking_caveat (input a , input b , input  c, output reg d); 
@@ -1037,7 +1037,7 @@ _EXAMPLE1_
 ![Screenshot from 2023-08-14 23-18-30](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/b6064095-9943-467b-bc2a-45eda25b3a04)
 Due to the improper use of blocking statements there is a mismatch.
 
-## <a name="7-day-5--if--case--for-loop-and-for-generate"> </a> 7.Day-5--If, case, for loop and for generate ##
+## <a name="7-day-5--if--case--for-loop-and-for-generate"> </a> 7.Day-5- If, case, for loop and for generate ##
 ### <a name="7-1-sky130rtl-d5sk1---if-case-constructs"> </a> 7.1 SKY130RTL D5SK1 - If Case constructs ###
 **If constructs** - Mainly used to create the priority logic.In a nested if else construct, the conditions are given priority from top to bottom. Only if the condition is satisfied, if statement is executed and the compiler comes out of the block. If condition fails, it checks for next condition and so on as shown below.
 _Syntax for nested if_
