@@ -982,6 +982,7 @@ _EXAMPLE1_
 	module ternary_operator_mux (input i0 , input i1 , input sel , output y);
 	assign y = sel?i1:i0;
 	endmodule
+
  **Simulation**
 ![Screenshot from 2023-08-14 22-36-00](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/4ef2548c-1b5b-4e7b-86b9-00b7873d854d)
 
@@ -1037,7 +1038,180 @@ Due to the improper use of blocking statements there is a mismatch.
 
 ## <a name="7-day-5--if--case--for-loop-and-for-generate"> </a> 7.Day-5--If, case, for loop and for generate ##
 ### <a name="7-1-sky130rtl-d5sk1---if-case-constructs"> </a> 7.1 SKY130RTL D5SK1 - If Case constructs ###
-**If constructs** - 
+**If constructs** - Mainly used to create the priority logic.In a nested if else construct, the conditions are given priority from top to bottom. Only if the condition is satisfied, if statement is executed and the compiler comes out of the block. If condition fails, it checks for next condition and so on as shown below.
+_Syntax for nested if_
+
+	if (<condition 1>)
+	begin
+		-----------
+		-----------
+	end
+	else if (<condition 2>)
+	begin
+		-----------
+		-----------
+	end
+	else if (<condition 3>)
+	.
+	.
+	.
+
+**Danger/Caution with if**==> "Inferred latches" (Bad coding style-incomplete if)
+
+**Case constructs** - In case construct, the execution checks for all the case statements and whichever satisfies the statement, that particular statement is executed.If there is no match, the default statement is executed. But here unlike if construct, the execution doesn't stop once statement is satisfied, but it continues further.
+
+	case(statement)
+  	case1: begin
+         --------
+	 --------
+	 end
+ 	case2: begin
+	 --------
+	 --------
+	 end
+	 default:
+ 	 endcase
+
+**Caveats in Case** Caveats in case occur due to two reasons. One is incomplete case statements and can be resolved by default case and the other is partial assignments in case statements. And also in case statements we should not have overlapping cases.
+
+### <a name="7-2-sky130rtl-d5sk2---labs-on--incomplete-if-case""> </a> 7.2 SKY130RTL D5SK2 - Labs on "Incomplete If Case" ###
+_EXAMPLE1_
+This incomplete if construct forms a connection between i0 and output y i.e, D-latch with input as i1 and i0 will be the enable for it.
+
+ 	module incomp_if (input i0 , input i1 , input i2 , output reg y);
+	always @ (*)
+	begin
+	if(i0)
+		y <= i1;
+	end
+	endmodule
+
+**Simulation**
+![Screenshot from 2023-08-15 00-43-57](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8c298211-f494-443b-b759-754af984c60f)
+
+**Synthesis**
+![Screenshot from 2023-08-15 00-45-35](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/b5d48e8c-7a71-42f5-8573-f8aa5e4a6a43)
+
+_EXAMPLE2_
+The below code is equivalent to two 2:1 mux with i0 and i2 as select lines with i1 and i3 as inputs respectively. Here as well, the output is connected back to input in the form of a latch with an enable input of OR of i0 and i2.
+
+	module incomp_if2 (input i0 , input i1 , input i2 , input i3, output reg y);
+	always @ (*)
+	begin
+		if(i0)
+			y <= i1;
+		else if (i2)
+			y <= i3;
+	end
+	endmodule
+
+**Simulation**
+![Screenshot from 2023-08-15 00-54-41](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/803b6059-aba3-49a8-9923-16121b22379e)
+
+**Synthesis**
+![Screenshot from 2023-08-15 00-56-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/155d5e16-4435-4547-a195-77f2b0de3945)
+
+### <a name="7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case""> </a> 7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case" ###
+_EXAMPLE1_ 
+This is an example of incomplete case where other two combinations 10 and 11 were not included. This is infer a latch for the multiplexer and connect i2 and i3 with the output.
+
+	module incomp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+	always @ (*)
+	begin
+	case(sel)
+		2'b00 : y = i0;
+		2'b01 : y = i1;
+	endcase
+	end
+	endmodule
+
+**Simulation**
+![Screenshot from 2023-08-15 01-10-36](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/01cc2164-7c08-4042-ba77-bde55771782d)
+
+**Synthesis**
+![Screenshot from 2023-08-15 01-15-07](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8705f040-1fcf-40ee-8ead-eb8323ff4f46)
+
+_EXAMPLE2_
+This is the case of complete case statements as the default case is given. If the actual case statements don't execute, the compiler directly executes the default statements and a latch is not inferred.
+
+	module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+	always @ (*)
+	begin
+	case(sel)
+		2'b00 : y = i0;
+		2'b01 : y = i1;
+		default : y = i2;
+	endcase
+	end
+	endmodule
+
+**Simulation**
+![Screenshot from 2023-08-15 01-18-53](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/980afc3a-d7cb-44c0-a1d8-6e6317295ccc)
+
+**Synthesis**
+![Screenshot from 2023-08-15 01-20-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/dcb8d7d2-8434-45d4-9786-08bfd9b3e59a)
+
+_EXAMPLE3_
+In the below example, y is present in all the case statements and it had particular outut for all cases. There no latch is inferred in case of y. When it comes to x, it is not assigned for the input 01, therefore a latch is inferred here.
+
+	module partial_case_assign (input i0 , input i1 , input i2 , input [1:0] sel, output reg y , output reg x);
+	always @ (*)
+	begin
+	case(sel)
+		2'b00 : begin
+			y = i0;
+			x = i2;
+			end
+		2'b01 : y = i1;
+		default : begin
+	         	  x = i1;
+			  y = i2;
+		 	 end
+	endcase
+	end
+	endmodule
+
+**Simulation**
+![Screenshot from 2023-08-15 01-36-20](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/af3b230e-1bc7-40a1-b500-500597f89f10)
+
+**Synthesis**
+![Screenshot from 2023-08-15 01-37-15](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cae4c9d2-85d5-4381-9100-b351b031b5bd)
+
+_EXAMPLE4_
+
+	module bad_case (input i0 , input i1, input i2, input i3 , input [1:0] sel, output reg y);
+	always @(*)
+	begin
+		case(sel)
+		2'b00: y = i0;
+		2'b01: y = i1;
+		2'b10: y = i2;
+		2'b1?: y = i3;
+		//2'b11: y = i3;
+	endcase
+	end
+	endmodule
+
+**Simulation**
+![Screenshot from 2023-08-15 01-41-04](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5b808a29-6556-43ef-a65a-f42eca2721de)
+
+**Synthesis**
+![Screenshot from 2023-08-15 01-42-27](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/2d217d77-e84b-4e31-9ca0-d1a7e7c932b3)
+
+### <a name="7-4-sky130rtl-d5sk4---for-loop-and-for-generate""> </a> 7.4 SKY130RTL D5SK4 - For Loop and For Generate  ###
+### <a name="7-5-sky130rtl-d5sk5---labs-on--for-loop-and-for-generate""> </a> 7.5 SKY130RTL D5SK5 - Labs on "For Loop and For Generate" ###
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
