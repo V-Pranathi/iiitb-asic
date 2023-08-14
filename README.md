@@ -1213,8 +1213,8 @@ For loop can be used to generate larger circuits like 256:1 multiplexer or 1-256
 FOR Generate can be used to instantiate any number of sub modules with in a top module. For example, if we need a 32 bit ripple carry adder, instead of instantiating 32 full adders, we can write a generate for loop and connect the full adders appropriately.
 
 ### <a name="7-5-sky130rtl-d5sk5---labs-on-for-loop-and-for-generate"> </a> 7.5 SKY130RTL D5SK5 -Labs on For Loop and For Generate  ###
-
-_EXAMPLE1_
+ 
+_EXAMPLE1_  
 Mux using generate.Here for loop is used to design a 4:1 mux. This can also be written using case or if else block, however, for a large size mux, only for loop model is feasible.
 
 	module mux_for (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
@@ -1236,7 +1236,7 @@ Mux using generate.Here for loop is used to design a 4:1 mux. This can also be w
 **Synthesis**  
 ![Screenshot from 2023-08-15 02-44-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/a3c57f8a-7a88-48a7-9091-96ba00f61a75)
 
-_EXAMPLE2_
+_EXAMPLE2_  
 Demux using Generate.The code in above example is big and also there is a chance of human error wile writing the code. However, using for loop as shown below, this drawback can be elimiated to a great extent.
 
 	module demux_generate (output o0 , output o1, output o2 , output o3, output o4, output o5, output o6 , output 				o7 , input [2:0] sel  , input i);
@@ -1259,7 +1259,7 @@ Demux using Generate.The code in above example is big and also there is a chance
 **Synthesis**  
 ![Screenshot from 2023-08-15 02-52-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/177b15c6-2156-4a31-8cc5-3886df157633)
 
-_EXAMPLE3_
+_EXAMPLE3_  
 Ripple carry adder using fulladder. In this Ripple carry adder example, unlike instantiating fulladder for 8 times, generate for loop is used to instantiate the fulladder for 7 times and only for first full adder, it is instantiated seperately. Using the same code, just by changing bus sizes and condition of for loop, we can design any required size of ripple carry adder.
 
 	module rca (input [7:0] num1 , input [7:0] num2 , output [8:0] sum);
