@@ -788,18 +788,119 @@ For optimiszing the circuit the command to be given in yosys is
 ### <a name="5-2-sky130rtl-d2sk1---sequential-logic-optimizations"> </a> 5.1 SKY130RTL D2SK1 - Sequential Logic Optimizations ###  
 --> Basic - Sequential Constant Optimisation  
 --> Advanced  
-     * State optimisation  
-     * Retiming  
-     * Sequential Logic Cloning (Floor Plan Aware Synthesis)  
-**Basic**  
-**Sequential Constant Optimisation-**   
+     	* State optimisation  
+     	* Retiming  
+     	* Sequential Logic Cloning (Floor Plan Aware Synthesis)  
+      
+**EXAMPLE1**
+Here flop will be inferred as the output is not constant
+
+	module dff_const1(input clk, input reset, output reg q);
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+			q <= 1'b0;
+		else
+			q <= 1'b1;
+	end
+	endmodule
+**Synthesis**
+![Screenshot from 2023-08-14 05-27-40](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f1a0e913-de99-4439-a2d7-d1992a2dd406)
+![Screenshot from 2023-08-14 05-30-41](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/c3aca558-c4a3-42c8-9afd-5beda3391130)
+
+**EXAMPLE2**
+Here flop will not be inferred as the output is constant
+
+	module dff_const2(input clk, input reset, output reg q);
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+			q <= 1'b1;
+		else
+			q <= 1'b1;
+	end
+	endmodule
+**Synthesis**
+![Screenshot from 2023-08-14 05-33-01](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e2dc6b62-1038-4ec3-9305-12ae59a76aef)
+![Screenshot from 2023-08-14 05-31-55](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/493bfc56-3446-4292-a9c6-9df194e4dbb6)
+
+**EXAMPLE3**
+
+ 	module dff_const3(input clk, input reset, output reg q);
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b0;
+		end
+		else
+		begin
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+	endmodule
+**Synthesis**
+![Screenshot from 2023-08-14 05-41-38](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/7e283c11-a280-4561-98d4-19c1ab5b3433)
+![Screenshot from 2023-08-14 05-35-51](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/9e773e02-9020-466b-841f-4c719f8bc064)
+
+**EXAMPLE4**
+
+ 	module dff_const4(input clk, input reset, output reg q);
+	reg q1;
+
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b1;
+			q1 <= 1'b1;
+		end
+	else
+		begin
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+	endmodule
+ **Synthesis**
+![Screenshot from 2023-08-14 05-48-39](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/1f309834-4ff8-4ff4-8406-3cfbd1b76d36)
+![Screenshot from 2023-08-14 05-47-36](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/40210d3e-ec2a-46e2-9461-0cd5d7134cc1)
+ 
+**EXAMPLE5**
+
+		module dff_const5(input clk, input reset, output reg q);
+	reg q1;
+	always @(posedge clk, posedge reset)
+		begin
+			if(reset)
+			begin
+				q <= 1'b0;
+				q1 <= 1'b0;
+			end
+		else
+			begin
+				q1 <= 1'b1;
+				q <= q1;
+			end
+		end
+	endmodule
+ **Synthesis**
+![Screenshot from 2023-08-14 05-52-28](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8ededd10-d4ee-4b25-8289-4e6f04de1def)
+![Screenshot from 2023-08-14 05-52-52](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/f758cc65-f936-409f-810d-a0601e4986a5)
 
 **Advanced**
+
 **State Optimisation:** This is optimisation of unused state. Using this technique we can come up with most optimised state machine.
 
 **Cloning:** This is done when performing PHYSICAL AWARE SYNTHESIS. Lets consider a flop A which is connected to flop B and flop C through a combination logic. If B and C are placed far from A in the flooerplan, there is a routing path delay. To avoid this, we connect A to two intermediate flops and then from these flops the output is sent to B and C thereby decreasing the delay. This process is called cloning since we are generating two new flops with same functionality as A.
 
 **Retiming:** Retiming is a powerful sequential optimization technique used to move registers across the combinational logic or to optimize the number of registers to improve performance via power-delay trade-off, without changing the input-output behavior of the circuit.
+
+### <a name="5-3-sky130rtl-d4sk3---sequential-logic-optimizations-for-unused-outputs"> </a> 5.1 SKY130RTL D4SK3 - Sequential Logic Optimizations for unused outputs ###  
 
 
 
