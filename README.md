@@ -1074,7 +1074,7 @@ _Syntax for nested if_
 
 **Caveats in Case** Caveats in case occur due to two reasons. One is incomplete case statements and can be resolved by default case and the other is partial assignments in case statements. And also in case statements we should not have overlapping cases.
 
-### <a name="7-2-sky130rtl-d5sk2---labs-on--incomplete-if-case""> </a> 7.2 SKY130RTL D5SK2 - Labs on "Incomplete If Case" ###
+### <a name="7-2-sky130rtl-d5sk2---labs-on--incomplete-if-case"> </a> 7.2 SKY130RTL D5SK2 - Labs on "Incomplete If Case" ###
 _EXAMPLE1_
 This incomplete if construct forms a connection between i0 and output y i.e, D-latch with input as i1 and i0 will be the enable for it.
 
@@ -1092,7 +1092,7 @@ This incomplete if construct forms a connection between i0 and output y i.e, D-l
 **Synthesis**
 ![Screenshot from 2023-08-15 00-45-35](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/b5d48e8c-7a71-42f5-8573-f8aa5e4a6a43)
 
-_EXAMPLE2_
+_EXAMPLE2_  
 The below code is equivalent to two 2:1 mux with i0 and i2 as select lines with i1 and i3 as inputs respectively. Here as well, the output is connected back to input in the form of a latch with an enable input of OR of i0 and i2.
 
 	module incomp_if2 (input i0 , input i1 , input i2 , input i3, output reg y);
@@ -1111,8 +1111,8 @@ The below code is equivalent to two 2:1 mux with i0 and i2 as select lines with 
 **Synthesis**
 ![Screenshot from 2023-08-15 00-56-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/155d5e16-4435-4547-a195-77f2b0de3945)
 
-### <a name="7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case""> </a> 7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case" ###
-_EXAMPLE1_ 
+### <a name="7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case"> </a> 7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case" ###
+_EXAMPLE1_    
 This is an example of incomplete case where other two combinations 10 and 11 were not included. This is infer a latch for the multiplexer and connect i2 and i3 with the output.
 
 	module incomp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
@@ -1131,7 +1131,7 @@ This is an example of incomplete case where other two combinations 10 and 11 wer
 **Synthesis**
 ![Screenshot from 2023-08-15 01-15-07](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8705f040-1fcf-40ee-8ead-eb8323ff4f46)
 
-_EXAMPLE2_
+_EXAMPLE2_  
 This is the case of complete case statements as the default case is given. If the actual case statements don't execute, the compiler directly executes the default statements and a latch is not inferred.
 
 	module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
@@ -1151,7 +1151,7 @@ This is the case of complete case statements as the default case is given. If th
 **Synthesis**
 ![Screenshot from 2023-08-15 01-20-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/dcb8d7d2-8434-45d4-9786-08bfd9b3e59a)
 
-_EXAMPLE3_
+_EXAMPLE3_  
 In the below example, y is present in all the case statements and it had particular outut for all cases. There no latch is inferred in case of y. When it comes to x, it is not assigned for the input 01, therefore a latch is inferred here.
 
 	module partial_case_assign (input i0 , input i1 , input i2 , input [1:0] sel, output reg y , output reg x);
@@ -1177,7 +1177,7 @@ In the below example, y is present in all the case statements and it had particu
 **Synthesis**
 ![Screenshot from 2023-08-15 01-37-15](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cae4c9d2-85d5-4381-9100-b351b031b5bd)
 
-_EXAMPLE4_
+_EXAMPLE4_  
 
 	module bad_case (input i0 , input i1, input i2, input i3 , input [1:0] sel, output reg y);
 	always @(*)
@@ -1198,8 +1198,8 @@ _EXAMPLE4_
 **Synthesis**
 ![Screenshot from 2023-08-15 01-42-27](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/2d217d77-e84b-4e31-9ca0-d1a7e7c932b3)
 
-### <a name="7-4-sky130rtl-d5sk4---for-loop-and-for-generate""> </a> 7.4 SKY130RTL D5SK4 - For Loop and For Generate  ###
-### <a name="7-5-sky130rtl-d5sk5---labs-on--for-loop-and-for-generate""> </a> 7.5 SKY130RTL D5SK5 - Labs on "For Loop and For Generate" ###
+### <a name="7-4-sky130rtl-d5sk4---for-loop-and-for-generate"> </a> 7.4 SKY130RTL D5SK4 - For Loop and For Generate  ###
+### <a name="7-5-sky130rtl-d5sk5---labs-on--for-loop-and-for-generate"> </a> 7.5 SKY130RTL D5SK5 - Labs on "For Loop and For Generate" ###
 
 
 
