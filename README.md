@@ -20,13 +20,13 @@
         * [3.3.2 SKY130RTL D1SK3 L2 Introduction to logic synthesis](#3-3-2-sky130rtl-d1sk3-l2-introduction-to-logic-synthesis) 
     * [3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs](#3-4-sky130rtl-d1sk4---labs-using-yosys-and-sky130-pdks)
         * [3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux](#3-4-1-sky130rtl-d1sk4-l1-lab3-yosys-1-good-mux)
-* [4.Day-2- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
-    * [4.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
-    *  [4.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
-    *   [4.3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
-    	* [4.3.1.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
-     	* [4.3.2.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
-      	* [4.3.3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
+* [4.Day-2- Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#4-day-2--timing-libs--hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles)
+    * [4.1 SKY130RTL D2SK1 - Introduction to timing .libs](#4-1-sky130rtl-d2sk1---introduction-to-timing--libs)
+    * [4.2 SKY130RTL D2SK2 - Hierarchical vs Flat Synthesis](#4-2-sky130rtl-d2sk2---hierarchical-vs-flat-synthesis)
+    * [4.3 SKY130RTL D2SK3 - Various Flop Coding Styles and Optimization](#4-3-sky130rtl-d2sk3---various-flop-coding-styles-and-optimization)
+    	* [4.3.1 SKY130RTL D2SK3 - Why Flops and Flop coding styles](#4-3-1-sky130rtl-d2sk3---why-flops-and-flop-coding-styles)
+     	* [4.3.2 SKY130RTL D2SK3 - lab Flop Synthesis Simulation](#4-3-2-sky130rtl-d2sk3---lab-flop-synthesis-simulation)
+      	* [4.3.3 SKY130RTL D2SK3 - Interesting Optimisations](#4-3-3-sky130rtl-d2sk3---interesting-optimisations)
 * [5.Day-3- Combinational and Sequential Optimizations](#5-day-3--combinational-and-sequential-optimizations)
     * [5.1 SKY130RTL D2SK1 - Combinational Logic Optimizations](#5-1-sky130rtl-d2sk1---combinational-logic-optimizations) 
     * [5.2 SKY130RTL D2SK2 - Sequential Logic Optimizations](#5-2-sky130rtl-d2sk2---sequential-logic-optimizations)
@@ -386,7 +386,7 @@ Modify the switch to get the simplified netlist code
 
 
 ![Screenshot from 2023-08-09 00-15-10](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/e3eff44e-fa1f-40c6-a5ed-110124a330cf)
-## <a name="4-day-2--timing libs--hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles"> </a> 4.Day-2- Timing libs, hierarchical vs flat synthesis and efficient flop coding styles ##
+## <a name="4-day-2--timing-libs--hierarchical-vs-flat-synthesis-and-efficient-flop-coding-styles"> </a> 4.Day-2- Timing libs, hierarchical vs flat synthesis and efficient flop coding styles ##
 ### <a name="4-1-sky130rtl-d2sk1---introduction-to-timing--libs"> </a> 4.1 SKY130RTL D2SK1 - Introduction to timing .libs ###
 As we already know .lib is a collection of standard cells. Now we will see what actually .lib file contains.  
 
