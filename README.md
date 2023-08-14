@@ -20,6 +20,7 @@
         * [3.3.2 SKY130RTL D1SK3 L2 Introduction to logic synthesis](#3-3-2-sky130rtl-d1sk3-l2-introduction-to-logic-synthesis) 
     * [3.4 SKY130RTL D1SK4 - Labs Using Yosys and SKY130 PDKs](#3-4-sky130rtl-d1sk4---labs-using-yosys-and-sky130-pdks)
         * [3.4.1 SKY130RTL D1SK4 L1 lab3 Yosys 1 good mux](#3-4-1-sky130rtl-d1sk4-l1-lab3-yosys-1-good-mux)
+* 
 * [Contributors](#contributors)
 * [Acknowledgement](#acknowledgement)
 ## <a name="1-introduction"></a> 1.Introduction ##  
@@ -1089,7 +1090,7 @@ This incomplete if construct forms a connection between i0 and output y i.e, D-l
 **Simulation**
 ![Screenshot from 2023-08-15 00-43-57](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8c298211-f494-443b-b759-754af984c60f)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-15 00-45-35](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/b5d48e8c-7a71-42f5-8573-f8aa5e4a6a43)
 
 _EXAMPLE2_  
@@ -1108,7 +1109,7 @@ The below code is equivalent to two 2:1 mux with i0 and i2 as select lines with 
 **Simulation**
 ![Screenshot from 2023-08-15 00-54-41](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/803b6059-aba3-49a8-9923-16121b22379e)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-15 00-56-32](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/155d5e16-4435-4547-a195-77f2b0de3945)
 
 ### <a name="7-3-sky130rtl-d5sk3---labs-on--incomplete-overlapping-case"> </a> 7.3 SKY130RTL D5SK3 - Labs on "Incomplete Overlapping Case" ###
@@ -1128,7 +1129,7 @@ This is an example of incomplete case where other two combinations 10 and 11 wer
 **Simulation**
 ![Screenshot from 2023-08-15 01-10-36](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/01cc2164-7c08-4042-ba77-bde55771782d)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-15 01-15-07](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/8705f040-1fcf-40ee-8ead-eb8323ff4f46)
 
 _EXAMPLE2_  
@@ -1145,10 +1146,10 @@ This is the case of complete case statements as the default case is given. If th
 	end
 	endmodule
 
-**Simulation**
+**Simulation**   
 ![Screenshot from 2023-08-15 01-18-53](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/980afc3a-d7cb-44c0-a1d8-6e6317295ccc)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-15 01-20-09](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/dcb8d7d2-8434-45d4-9786-08bfd9b3e59a)
 
 _EXAMPLE3_  
@@ -1171,10 +1172,10 @@ In the below example, y is present in all the case statements and it had particu
 	end
 	endmodule
 
-**Simulation**
+**Simulation**  
 ![Screenshot from 2023-08-15 01-36-20](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/af3b230e-1bc7-40a1-b500-500597f89f10)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-15 01-37-15](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/cae4c9d2-85d5-4381-9100-b351b031b5bd)
 
 _EXAMPLE4_  
@@ -1192,34 +1193,104 @@ _EXAMPLE4_
 	end
 	endmodule
 
-**Simulation**
+**Simulation**  
 ![Screenshot from 2023-08-15 01-41-04](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/5b808a29-6556-43ef-a65a-f42eca2721de)
 
-**Synthesis**
+**Synthesis**  
 ![Screenshot from 2023-08-15 01-42-27](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/2d217d77-e84b-4e31-9ca0-d1a7e7c932b3)
 
 ### <a name="7-4-sky130rtl-d5sk4---for-loop-and-for-generate"> </a> 7.4 SKY130RTL D5SK4 - For Loop and For Generate  ###
-### <a name="7-5-sky130rtl-d5sk5---labs-on--for-loop-and-for-generate"> </a> 7.5 SKY130RTL D5SK5 - Labs on "For Loop and For Generate" ###
+**For Loop**
+* For look is used in always block
+* It is used for excecuting expressions alone
+
+**Generate For loop**
+* Generate for loop is used for instantaing hardware
+* It should be used only outside always block
+
+For loop can be used to generate larger circuits like 256:1 multiplexer or 1-256 demultiplexer where the coding style of smaller mux is not feesible and can have human errors since we would need to include huge number of combinations.
+
+FOR Generate can be used to instantiate any number of sub modules with in a top module. For example, if we need a 32 bit ripple carry adder, instead of instantiating 32 full adders, we can write a generate for loop and connect the full adders appropriately.
+
+### <a name="7-5-sky130rtl-d5sk5---labs-on-for-loop-and-for-generate"> </a> 7.5 SKY130RTL D5SK5 -Labs on For Loop and For Generate  ###
+
+_EXAMPLE1_
+Mux using generate.Here for loop is used to design a 4:1 mux. This can also be written using case or if else block, however, for a large size mux, only for loop model is feasible.
+
+	module mux_for (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
+	wire [3:0] i_int;
+	assign i_int = {i3,i2,i1,i0};
+	integer k;
+	always @ (*)
+	begin
+	for(k = 0; k < 4; k=k+1) begin
+		if(k == sel)
+		y = i_int[k];
+		end
+	end
+	endmodule
+
+**Simulation**  
+![Screenshot from 2023-08-15 02-44-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/a6315d8f-1e6d-46b4-b185-d8cd137100e3)
+
+**Synthesis**  
+![Screenshot from 2023-08-15 02-44-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/a3c57f8a-7a88-48a7-9091-96ba00f61a75)
+
+_EXAMPLE2_
+Demux using Generate.The code in above example is big and also there is a chance of human error wile writing the code. However, using for loop as shown below, this drawback can be elimiated to a great extent.
+
+	module demux_generate (output o0 , output o1, output o2 , output o3, output o4, output o5, output o6 , output 				o7 , input [2:0] sel  , input i);
+	reg [7:0]y_int;
+	assign {o7,o6,o5,o4,o3,o2,o1,o0} = y_int;
+	integer k;
+	always @ (*)
+	begin
+	y_int = 8'b0;
+	for(k = 0; k < 8; k++) begin
+		if(k == sel)
+		y_int[k] = i;
+	end
+	end
+	endmodule
+
+**Simulation**  
+![Screenshot from 2023-08-15 02-51-39](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/fdaf777c-19c8-4e4f-8175-2a86c633d0dc)
+ 
+**Synthesis**  
+![Screenshot from 2023-08-15 02-52-31](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/177b15c6-2156-4a31-8cc5-3886df157633)
+
+_EXAMPLE3_
+Ripple carry adder using fulladder. In this Ripple carry adder example, unlike instantiating fulladder for 8 times, generate for loop is used to instantiate the fulladder for 7 times and only for first full adder, it is instantiated seperately. Using the same code, just by changing bus sizes and condition of for loop, we can design any required size of ripple carry adder.
+
+	module rca (input [7:0] num1 , input [7:0] num2 , output [8:0] sum);
+	wire [7:0] int_sum;
+	wire [7:0]int_co;
+
+	genvar i;
+	generate
+	for (i = 1 ; i < 8; i=i+1) begin
+		fa u_fa_1 (.a(num1[i]),.b(num2[i]),.c(int_co[i-1]),.co(int_co[i]),.sum(int_sum[i]));
+	end
+
+	endgenerate
+	fa u_fa_0 (.a(num1[0]),.b(num2[0]),.c(1'b0),.co(int_co[0]),.sum(int_sum[0]));
 
 
+	assign sum[7:0] = int_sum;
+	assign sum[8] = int_co[7];
+	endmodule
 
 
+**Simulation**  
+![Screenshot from 2023-08-15 02-58-21](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/98bdd457-3931-4a71-b92d-83483b0a4e5a)
 
-
-
-
-
-
-
-
-
-
-
-
-
+**Synthesis**  
+![Screenshot from 2023-08-15 03-01-06](https://github.com/V-Pranathi/iiitb-asic/assets/140998763/7bbc8165-f2d3-4bfc-afd1-740d560a92c0)
 
 ## Contributors ##
 * Valipireddy Pranathi
 * Kunal Ghosh
-## Acknowledgement ##
+## Acknowledgement ##  
+I sincerely thank VLSI system design team and Mr.Kunal Gosh for these lectures. We enjoyed doing labs and looking forward to attend future workshops like these.
+
 
