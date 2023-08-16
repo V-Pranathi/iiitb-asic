@@ -2,13 +2,13 @@
 ## Table of Contents ##
 * [1.Introduction](#1-introduction)
 * [2.Tools Installation](#2-tools-installation)
-     * [Yosys](#yosys)
-     * [iverilog](#iverilog)
-     * [gtkwave](#gtkwave)
-     * [OpenSTA](#opensta)
-     * [ngspice](#ngspice)
-     * [magic](#magic)
-     * [OpenLane](#openlane)
+     * Yosys
+     * iverilog
+     * gtkwave
+     * OpenSTA
+     * ngspice
+     * magic
+     * OpenLane
 * [3.Day-1- Introduction to Verilog RTL design and Synthesis](#3-day-1--introduction-to-verilog-rtl-design-and-synthesis)
     * [3.1 SKY130RTL D1SK1 - Introduction to open-source simulator iverilog](#3-1-sky130rtl-dlsk1-introduction-to-open-source-simulator-iverilog)
         * [3.1.1 SKY130RTL D1SK1 L1 Introduction iverilog design and test bench](#3-1-1-sky130rtl-d1sk1-l1-introduction-iverilog-design-and-test-bench)
