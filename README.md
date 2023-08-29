@@ -350,10 +350,10 @@ Invoking Yosys:
 Commands for synthesis:
 
     $ yosys
-    $ read_liberty -lib /home/nandu/ASIC/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    $ read_liberty -lib /home/pranathi/ASIC/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     $ read_verilog good_mux.v
     $ synth -top good_mux
-    $ abc -liberty /home/nandu/ASIC/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    $ abc -liberty /home/pranathi/ASIC/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
     $ show
     $ write_verlog good_mux_netlist.v
     $ write_verilog -noattr good_mux_netlist.v
